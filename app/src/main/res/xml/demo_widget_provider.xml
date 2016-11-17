@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--(((Number of columns / rows) * 74) - 2) -->
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:initialLayout="@layout/widget_layout"
+    android:minHeight="72dp"
+    android:minWidth="292dp"
+    android:previewImage="@drawable/calendar"
+    android:updatePeriodMillis="1000000" >
+</appwidget-provider>

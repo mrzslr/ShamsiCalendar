@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ShCalandar</string>
+    <string name="time_next">ماه بعد</string>
+    <string name="time_prev">ماه قبل</string>
+</resources>

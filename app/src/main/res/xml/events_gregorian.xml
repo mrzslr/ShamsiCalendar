@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XCalendarEvents Version="1.0.0">
+  <Event Title="آغاز سال جدید ميلادي" FormatTitle="1" XCalendar="GregorianCalendar" Day="1" Month="1"/>
+  <Event Title="روز جهاني كار و كارگر" XCalendar="GregorianCalendar" Day="1" Month="5"/>
+  <Event Title="روز جهاني صليب سرخ و هلال احمر" XCalendar="GregorianCalendar" Day="8" Month="5"/>
+  <Event Title=" روز جهاني موزه و ميراث فرهنگي" XCalendar="GregorianCalendar" Day="18" Month="5"/>
+  <Event Title="روز جهاني محيط زيست" XCalendar="GregorianCalendar" Day="5" Month="6"/>
+  <Event Title=" روز جهاني صنايع دستي" XCalendar="GregorianCalendar" Day="10" Month="6"/>
+  <Event Title="روز جهاني بيابان زدايي" XCalendar="GregorianCalendar" Day="17" Month="6"/>
+  <Event Title="روز جهاني مبارزه با مواد مخدر" XCalendar="GregorianCalendar" Day="26" Month="6"/>
+  <Event Title="روز جهاني مسجد" XCalendar="GregorianCalendar" Day="21" Month="8"/>
+  <Event Title=" روز جهاني جهانگردي" XCalendar="GregorianCalendar" Day="27" Month="9"/>
+  <Event Title="روز جهاني ناشنوايان" XCalendar="GregorianCalendar" Day="30" Month="9"/>
+  <Event Title="روز جهاني سالمندان" XCalendar="GregorianCalendar" Day="1" Month="10"/>
+  <Event Title="روز جهاني كودك" XCalendar="GregorianCalendar" Day="8" Month="10"/>
+  <Event Title="روز جهاني استاندارد" XCalendar="GregorianCalendar" Day="14" Month="10"/>
+  <Event Title="روز جهاني نابينايان (عصاي سفيد)" XCalendar="GregorianCalendar" Day="15" Month="10"/>
+  <Event Title="روز جهاني معلولان" XCalendar="GregorianCalendar" Day="3" Month="12"/>
+</XCalendarEvents>
