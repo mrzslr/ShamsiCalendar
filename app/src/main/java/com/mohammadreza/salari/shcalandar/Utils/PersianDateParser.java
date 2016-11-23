@@ -35,11 +35,13 @@ import android.content.*;
  *     new PersianDateParser("1361/3/1").getPersianDate();             
  *  }
  * </pre>
- * 
- * @author Morteza contact: <a
- *         href="mailto:Mortezaadi@gmail.com">Mortezaadi@gmail.com</a>
+ *
+ *
+ * @author MohammadReza Salari contact: <a
+ *         href="mailto:frishter.ms@gmail.com">frishter.ms@gmail.com</a>
  * @version 1.0
  */
+
 public class PersianDateParser {
 
 	private String dateString;

@@ -13,4 +13,8 @@
     <color name="stroke">#4386F6</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
+
+
+
+    <color name="m_red">#f44336</color>
 </resources>

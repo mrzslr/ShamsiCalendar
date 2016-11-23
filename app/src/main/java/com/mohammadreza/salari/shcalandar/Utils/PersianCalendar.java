@@ -1,24 +1,4 @@
-/**
- * Persian Calendar see: http://code.google.com/p/persian-calendar/
-   Copyright (C) 2012  Mortezaadi@gmail.com Edited by irshst@gmail.com
-   
---> telegram.me/shes_ir  <--
 
-   PersianCalendar.java
-   
-   Persian Calendar is free software: you can redistribute it and/or modify
-   it under the terms of the GNU General Public License as published by
-   the Free Software Foundation, either version 3 of the License, or
-   (at your option) any later version.
-
-   This program is distributed in the hope that it will be useful,
-   but WITHOUT ANY WARRANTY; without even the implied warranty of
-   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-   GNU General Public License for more details.
-
-   You should have received a copy of the GNU General Public License
-   along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
 package com.mohammadreza.salari.shcalandar.Utils;
 
 import java.util.GregorianCalendar;
@@ -28,66 +8,9 @@ import android.util.*;
 import java.text.*;
 import android.content.*;
 
-//import com.github.msarhan.ummalqura.calendar.*;
+
 /**
- * 
- * <strong> Persian(Shamsi) calendar </strong>
- * <p>
- * </p>
- * <p>
- * The calendar consists of 12 months, the first six of which are 31 days, the
- * next five 30 days, and the final month 29 days in a normal year and 30 days
- * in a leap year.
- * </p>
- * <p>
- * As one of the few calendars designed in the era of accurate positional
- * astronomy, the Persian calendar uses a very complex leap year structure which
- * makes it the most accurate solar calendar in use today. Years are grouped
- * into cycles which begin with four normal years after which every fourth
- * subsequent year in the cycle is a leap year. Cycles are grouped into grand
- * cycles of either 128 years (composed of cycles of 29, 33, 33, and 33 years)
- * or 132 years, containing cycles of of 29, 33, 33, and 37 years. A great grand
- * cycle is composed of 21 consecutive 128 year grand cycles and a final 132
- * grand cycle, for a total of 2820 years. The pattern of normal and leap years
- * which began in 1925 will not repeat until the year 4745!
- * </p>
- * </p> Each 2820 year great grand cycle contains 2137 normal years of 365 days
- * and 683 leap years of 366 days, with the average year length over the great
- * grand cycle of 365.24219852. So close is this to the actual solar tropical
- * year of 365.24219878 days that the Persian calendar accumulates an error of
- * one day only every 3.8 million years. As a purely solar calendar, months are
- * not synchronized with the phases of the Moon. </p>
- * <p>
- * </p>
- * 
- * <p>
- * <strong>PersianCalendar</strong> by extending Default GregorianCalendar
- * provides capabilities such as:
- * </p>
- * <p>
- * </p>
- * 
- * <li>you can set the date in Persian by setPersianDate(persianYear,
- * persianMonth, persianDay) and get the Gregorian date or vice versa</li>
- * <p>
- * </p>
- * <li>determine is the current date is Leap year in persian calendar or not by
- * IsPersianLeapYear()</li>
- * <p>
- * </p>
- * <li>getPersian short and long Date String getPersianShortDate() and
- * getPersianLongDate you also can set delimiter to assign delimiter of returned
- * dateString</li>
- * <p>
- * </p>
- * <li>Parse string based on assigned delimiter</li>
- * <p>
- * </p>
- * <p>
- * </p>
- * <p>
- * </p>
- * <p>
+ *
  * <strong> Example </strong>
  * </p>
  * <p>
@@ -116,7 +39,7 @@ import android.content.*;
  * }
  * 
  * <pre>
- * @author Morteza  contact: <a href="mailto:Mortezaadi@gmail.com">Mortezaadi@gmail.com</a>
+ * @author MohammadReza Salari  contact: <a href="mailto:frishter.ms@gmail.com">frishter.ms@gmail.com</a>
  * @version 1.1
  */
 public class PersianCalendar extends GregorianCalendar {

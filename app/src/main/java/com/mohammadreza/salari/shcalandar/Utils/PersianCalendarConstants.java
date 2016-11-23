@@ -20,8 +20,8 @@ package com.mohammadreza.salari.shcalandar.Utils;
 
 /**
  * 
- * @author Morteza contact: <a
- *         href="mailto:Mortezaadi@gmail.com">Mortezaadi@gmail.com</a>
+ * @author MohammadReza Salari contact: <a
+ *         href="mailto:frishter.ms@gmail.com">frishter.ms@gmail.com</a>
  * @version 1.0
  */
 public class PersianCalendarConstants {
@@ -52,13 +52,13 @@ public class PersianCalendarConstants {
 			"\u0627\u0633\u0641\u0646\u062f" // Esfand
 	};
 
-	public static final String[] persianWeekDays = { "ش", // Shanbeh
-			"ی", // Yekshanbeh
-			"د", // Doshanbeh
-			"س", // Sehshanbeh
-			"چ", // Chaharshanbeh
-			"پ", // Panjshanbeh
-			"ج" // jome
+	public static final String[] persianWeekDays = { "شنبه", // Shanbeh
+			"یکشنبه", // Yekshanbeh
+			"دو شنبه", // Doshanbeh
+			"سه شنبه", // Sehshanbeh
+			"چهار شنبه", // Chaharshanbeh
+			"پنجشنبه", // Panjshanbeh
+			"جمعه" // jome
 	};
 	/*
 

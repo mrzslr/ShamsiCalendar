@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.70"
+            android:orientation="vertical">
+
+            <com.mohammadreza.salari.shcalandar.Views.MyTextViewBold
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="bottom"
+                android:id="@+id/txtSummary"
+                android:layout_marginRight="16dp"
+                android:layout_weight="0.50"
+                android:gravity="right|bottom"
+                android:text="Meet Farzad Akhondzadeh"
+                android:textColor="@color/black" />
+
+            <com.mohammadreza.salari.shcalandar.Views.MyTextViewBold
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="right|top"
+                android:id="@+id/txtLocation"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="0.50"
+                android:gravity="right|top"
+                android:text="Iran , Bandar-e-Abbas"
+                android:textColor="#8f1d1d1d" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.30"
+            android:background="@color/colorAccent"
+            android:orientation="vertical">
+
+            <com.mohammadreza.salari.shcalandar.Views.MyTextViewBold
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="24dp"
+                android:gravity="center"
+                android:text="25"
+                android:textColor="@color/white"
+                android:textSize="32sp"
+                android:textStyle="bold" />
+
+            <com.mohammadreza.salari.shcalandar.Views.MyTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="مرداد"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

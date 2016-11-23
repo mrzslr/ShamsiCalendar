@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mohammadreza.salari.shcalandar">
+
     <uses-permission android:name="android.permission.READ_CALENDAR" />
     <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+
 
     <application
         android:name=".MyApplication"
@@ -11,7 +18,26 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".Activities.MainActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name=".Activities.DayDetailsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Transparent"></activity>
+        <activity
+            android:name=".Activities.AboutActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".Activities.GoogleCalendarActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name=".Activities.GcActivity"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,9 +45,8 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".MyWidgetProvider" >
+        <receiver android:name=".MyWidgetProvider">
             <intent-filter>
-
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
 
@@ -29,6 +54,12 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/demo_widget_provider" />
         </receiver>
+
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
     </application>
 
 </manifest>

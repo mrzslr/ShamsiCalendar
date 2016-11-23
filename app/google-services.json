@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "89109891685",
+    "project_id": "shcalandar"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:89109891685:android:43a4c30abd2d762b",
+        "android_client_info": {
+          "package_name": "com.mohammadreza.salari.shcalandar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "89109891685-dsa6eloie3i8pco0r9uvvpj6ls37hisa.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mohammadreza.salari.shcalandar",
+            "certificate_hash": "985FE42E82E73537FD97A8809E8C7B835617754D"
+          }
+        },
+        {
+          "client_id": "89109891685-ijga1q0ijb3i7uo9kjhmvned98j3hj1j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAg_iguyFKSjPf1PPUncpkPtroCJP8pBD0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

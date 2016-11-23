@@ -3,7 +3,7 @@
     <!-- Color of the border -->
     <stroke
 		android:width="1dp"
-		android:color="#FAF0FA" />
+		android:color="#FFFFFF" />
     <!-- Use this if you want to round your Corners -->
     <corners android:radius="1dp" />
     <!-- Use this attribute if you want add some paddings -->

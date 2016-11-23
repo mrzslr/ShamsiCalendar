@@ -9,16 +9,16 @@ import android.view.*;
 import android.graphics.*;
 import android.text.*;
 
+import com.mohammadreza.salari.shcalandar.Views.MyTextView;
 
-/**
- * Created by Irshst 1395 .
- */
+
 public class DayView extends LinearLayout {//} TextView {
 
     private static final int[] STATE_CURRENT = {R.attr.state_current};
 
     private boolean mCurrent, mVacation;
-    private TextView txtUp, txtMid, txtDown;
+    private TextView txtUp, txtDown;
+    private MyTextView txtMid;
     private ImageView imgVacation;
     LayoutInflater mInflater;
 
@@ -41,7 +41,7 @@ public class DayView extends LinearLayout {//} TextView {
         super.onFinishInflate();
 
         txtUp = (TextView) findViewById(R.id.dayTextUp);
-        txtMid = (TextView) findViewById(R.id.dayText);
+        txtMid = (MyTextView) findViewById(R.id.dayText);
         txtDown = (TextView) findViewById(R.id.dayTextDown);
         imgVacation = (ImageView) findViewById(R.id.imgVacation);
     }
@@ -74,10 +74,12 @@ public class DayView extends LinearLayout {//} TextView {
 
     public void setVacation(boolean vacation) {
         mVacation = vacation;
-        if (vacation == true)
+        if (vacation == true) {
 
-            txtMid.setTextColor(Color.RED);
-        else txtMid.setTextColor(Color.WHITE);
+            //  txtMid.setTextColor(Color.RED);
+        } else {
+            txtMid.setTextColor(Color.WHITE);
+        }
 
     }
 
@@ -93,11 +95,13 @@ public class DayView extends LinearLayout {//} TextView {
         if (hasEvent) txtMid.setText(Html.fromHtml("<u>" + txt + "</u>"));
         else txtMid.setText(txt);
         if (isVacation == true) {
-            imgVacation.setVisibility(VISIBLE);
-            txtMid.setTextColor(Color.RED);
+            //imgVacation.setVisibility(VISIBLE);
+            txtMid.setTextColor(getContext().getResources().getColor(R.color.m_red));
+           // txtMid.setTextColor(getContext().getResources().getColor(R.color.black));
         } else {
-            imgVacation.setVisibility(INVISIBLE);
+            //imgVacation.setVisibility(INVISIBLE);
             txtMid.setTextColor(getContext().getResources().getColor(R.color.black));
+
         }
     }
 
@@ -106,11 +110,11 @@ public class DayView extends LinearLayout {//} TextView {
         else
             txtUp.setText(txt);
         if (isVacation == true) {
-            imgVacation.setVisibility(VISIBLE);
-            txtUp.setTextColor(Color.RED);
+          //  imgVacation.setVisibility(VISIBLE);
+            txtUp.setTextColor(getContext().getResources().getColor(R.color.m_red));
         } else {
             txtUp.setTextColor(getContext().getResources().getColor(R.color.black));
-            imgVacation.setVisibility(INVISIBLE);
+            //imgVacation.setVisibility(INVISIBLE);
         }
     }
 
@@ -119,10 +123,10 @@ public class DayView extends LinearLayout {//} TextView {
         else
             txtDown.setText(txt);
         if (isVacation == true) {
-            imgVacation.setVisibility(VISIBLE);
-            txtDown.setTextColor(Color.RED);
+          //  imgVacation.setVisibility(VISIBLE);
+            txtDown.setTextColor(getContext().getResources().getColor(R.color.m_red));
         } else {
-            txtDown.setTextColor(getContext().getResources().getColor(R.color.black));
+           // txtDown.setTextColor(getContext().getResources().getColor(R.color.black));
             imgVacation.setVisibility(INVISIBLE);
         }
     }

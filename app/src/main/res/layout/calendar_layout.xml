@@ -1,203 +1,201 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-	xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:tools="http://schemas.android.com/tools"
-	android:layout_width="match_parent"
-	android:layout_height="match_parent"
-	android:orientation="vertical">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-	<FrameLayout
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-		<LinearLayout
-			android:id="@+id/header"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:orientation="horizontal"
-			android:background="@drawable/b_header">
+        <LinearLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/b_header"
+            android:orientation="horizontal">
 
-			<ImageButton
-				android:id="@+id/prev"
-				android:layout_width="wrap_content"
-				android:layout_height="match_parent"
-				style="?android:borderlessButtonStyle"
-				android:src="@drawable/ic_keyboard_arrow_left_black_24dp"
-				android:contentDescription="@string/time_prev"
-				android:background="@null"/>
+            <ImageButton
+                android:id="@+id/prev"
+                style="?android:borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
 
-			<LinearLayout
-				android:layout_width="0dp"
-				android:layout_height="match_parent"
-				android:layout_weight="1"
-				android:orientation="vertical">
+                android:contentDescription="@string/time_prev"
+                app:srcCompat="@drawable/ic_keyboard_arrow_left_black_24dp" />
 
-				<TextView
-					android:id="@+id/title"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:gravity="center"
-					android:layout_weight="1"
-					android:textSize="20sp"/>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-				<LinearLayout
-					android:layout_weight="1"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:orientation="horizontal"
-					>
+                <com.mohammadreza.salari.shcalandar.Views.MyTextViewBold
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
 
-					<TextView
-						android:id="@+id/titleUp"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:layout_weight="1"
-						android:textSize="10sp"
-						tools:ignore="SmallSp"
-						android:gravity="left"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
 
-					<View
-						android:layout_height="match_parent"
-						android:layout_width="5dp"/>
+                    <com.mohammadreza.salari.shcalandar.Views.MyTextView
+                        android:id="@+id/titleUp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:textSize="10sp"
+                        tools:ignore="SmallSp" />
 
-					<TextView
-						android:id="@+id/titleDown"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:layout_weight="1"
-						android:textSize="10sp"
-						tools:ignore="SmallSp"
-						android:gravity="right"
-						android:layout_alignParentRight="true"
-						android:layout_gravity="right"
-						android:textAlignment="gravity"/>
+                    <View
+                        android:layout_width="5dp"
+                        android:layout_height="match_parent" />
 
-				</LinearLayout>
+                    <com.mohammadreza.salari.shcalandar.Views.MyTextView
+                        android:id="@+id/titleDown"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_gravity="right"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:textAlignment="gravity"
+                        android:textSize="10sp"
+                        tools:ignore="SmallSp" />
 
-			</LinearLayout>
+                </LinearLayout>
 
-			<ImageButton
-				android:id="@+id/next"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				style="?android:borderlessButtonStyle"
-				android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
-				android:contentDescription="@string/time_next"
-				android:background="@null"/>
+            </LinearLayout>
 
-		</LinearLayout>
+            <ImageButton
+                android:id="@+id/next"
+                style="?android:borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:contentDescription="@string/time_next"
+                app:srcCompat="@drawable/ic_keyboard_arrow_right_black_24dp" />
 
-		<TextView
-			android:id="@+id/selection_title"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:background="@color/blue_dark"
-			android:textColor="@android:color/white"
-			android:textSize="20sp"
-			android:minHeight="48dp"
-			android:gravity="center"
-			android:singleLine="true"
-			android:visibility="gone"/>
+        </LinearLayout>
 
-	</FrameLayout>
+        <TextView
+            android:id="@+id/selection_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/blue_dark"
+            android:gravity="center"
+            android:minHeight="48dp"
+            android:singleLine="true"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:visibility="gone" />
 
-	<LinearLayout
-		android:id="@+id/days"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:orientation="horizontal">
+    </FrameLayout>
 
-		<TextView
-			android:layout_width="0dp"
-			android:layout_height="wrap_content"
-			android:layout_weight="1"
-			android:gravity="center"
-			android:text="ج"
-			android:textAllCaps="true"/>
+    <LinearLayout
+        android:id="@+id/days"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
 
-		<TextView
-			android:layout_width="0dp"
-			android:layout_height="wrap_content"
-			android:text="پ"
-			android:layout_weight="1"
-			android:gravity="center"
-			android:textAllCaps="true"/>
+        <com.mohammadreza.salari.shcalandar.Views.MyTextViewBold
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="ج"
+            android:textAllCaps="true" />
 
-		<TextView
-			android:layout_width="0dp"
-			android:layout_height="wrap_content"
-			android:layout_weight="1"
-			android:text="چ"
-			android:gravity="center"
-			android:textAllCaps="true"/>
+        <com.mohammadreza.salari.shcalandar.Views.MyTextViewBold
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="پ"
+            android:textAllCaps="true" />
 
-		<TextView
-			android:layout_width="0dp"
-			android:layout_height="wrap_content"
-			android:layout_weight="1"
-			android:gravity="center"
-			android:text="س"
-			android:textAllCaps="true"/>
+        <com.mohammadreza.salari.shcalandar.Views.MyTextViewBold
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="چ"
+            android:textAllCaps="true" />
 
-		<TextView
-			android:layout_width="0dp"
-			android:layout_height="wrap_content"
-			android:layout_weight="1"
-			android:text="د"
-			android:gravity="center"
-			android:textAllCaps="true"/>
+        <com.mohammadreza.salari.shcalandar.Views.MyTextViewBold
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="س"
+            android:textAllCaps="true" />
 
-		<TextView
-			android:layout_width="0dp"
-			android:layout_height="wrap_content"
-			android:layout_weight="1"
-			android:gravity="center"
-			android:text="ی"
-			android:textAllCaps="true"/>
+        <com.mohammadreza.salari.shcalandar.Views.MyTextViewBold
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="د"
+            android:textAllCaps="true" />
 
-		<TextView
-			android:layout_width="0dp"
-			android:layout_height="wrap_content"
-			android:layout_weight="1"
-			android:text="ش"
-			android:gravity="center"
-			android:textAllCaps="true"/>
+        <com.mohammadreza.salari.shcalandar.Views.MyTextViewBold
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="ی"
+            android:textAllCaps="true" />
 
-	</LinearLayout>
+        <com.mohammadreza.salari.shcalandar.Views.MyTextViewBold
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="ش"
+            android:textAllCaps="true" />
 
-	<LinearLayout
-		android:id="@+id/weeks"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:orientation="vertical"
-		android:background="#FFFFFF">
+    </LinearLayout>
 
-		<include
-			layout="@layout/week_layout"
-			/>
+    <LinearLayout
+        android:id="@+id/weeks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:orientation="vertical">
 
-		<include
-			layout="@layout/week_layout"/>
+        <include layout="@layout/week_layout" />
 
-		<include
-			layout="@layout/week_layout"/>
+        <include layout="@layout/week_layout" />
 
-		<include
-			layout="@layout/week_layout"/>
+        <include layout="@layout/week_layout" />
 
-		<include
-			layout="@layout/week_layout"/>
+        <include layout="@layout/week_layout" />
 
-		<include
-			layout="@layout/week_layout"/>
-		<View
+        <include layout="@layout/week_layout" />
 
-			android:layout_height="10dp"
+        <include layout="@layout/week_layout" />
 
-			android:layout_width="match_parent"
-		/>
+        <View
 
-	</LinearLayout>
+            android:layout_width="match_parent"
+
+            android:layout_height="10dp" />
+
+    </LinearLayout>
 
 </LinearLayout>
 

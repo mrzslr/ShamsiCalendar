@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_about"
+        android:icon="@drawable/ic_face_white_24dp"
+        android:orderInCategory="2"
+        android:title="action_about"
+        app:showAsAction="ifRoom"></item>
+    <item
+        android:id="@+id/action_calendar"
+        android:icon="@drawable/ic_calendar_white_24dp"
+        android:orderInCategory="2"
+        android:title="به اشتراک گذاری"
+        app:showAsAction="ifRoom"></item>
+</menu>
