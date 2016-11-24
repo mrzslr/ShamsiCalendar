@@ -62,8 +62,8 @@ public class PersianCalendarUtils {
 	 * Converts a provided Julian Day Number (i.e. the number of days since
 	 * January 1 in the year 4713 BC) to the Persian (Shamsi) date. Since the
 	 * Persian calendar is a highly regular calendar, converting to and from a
-	 * Julian Day Number is not as difficult as it looks. Basically it's a
-	 * mather of dividing, rounding and multiplying.
+	 * J
+	 * mather of dividing, rounding and multiplying.ulian Day Number is not as difficult as it looks. Basically it's a
 	 * 
 	 * @param julianDate
 	 * @return long

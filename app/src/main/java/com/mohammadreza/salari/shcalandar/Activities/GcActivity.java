@@ -20,6 +20,7 @@ import com.mohammadreza.salari.shcalandar.Adapter.EventsAdapter;
 import com.mohammadreza.salari.shcalandar.DB.DatabaseHandler;
 import com.mohammadreza.salari.shcalandar.Model.MyEvent;
 import com.mohammadreza.salari.shcalandar.R;
+import com.mohammadreza.salari.shcalandar.Utils.PersianCalendarUtils;
 
 import android.Manifest;
 import android.accounts.AccountManager;
@@ -313,21 +314,13 @@ public class GcActivity extends AppCompatActivity implements EasyPermissions.Per
             Events events = mService.events().list("primary")
                     // .setMaxResults(40)
                     //.setTimeMin(now)
-                    //.setTimeMin(timeMin)
-                    //.settimem
                     .setOrderBy("startTime")
                     .setSingleEvents(true)
                     .execute();
             List<Event> items = events.getItems();
-
-            Log.i("start ", events.toString());
-
-
             for (Event event : items) {
                 //DateTime start = event.getStart().getDateTime();
-                //myEvents.add(new MyEvent(event.getId(), event.getSummary(), event.getLocation(), event.getDescription(), event.getStart().toString(), event.getEnd().toString()));
-                //db.addEvent(new MyEvent(event.getId(), event.getSummary() + " ", event.getDescription() + " ", event.getLocation() + " ", String.valueOf(event.getStart().getDate().getValue()), String.valueOf(event.getEnd().getDate().getValue())));
-                MyEvent myEvent = new MyEvent();
+              MyEvent myEvent = new MyEvent();
                 if (event.getId() != null) {
                     myEvent.setId(event.getId());
                 } else {
@@ -349,25 +342,28 @@ public class GcActivity extends AppCompatActivity implements EasyPermissions.Per
                     myEvent.setLocation(" ");
                 }
 
-                SimpleDateFormat dtExibicao = new SimpleDateFormat("dd/MM/yyyy");
+                try {
 
-                Date dtEnd = new Date(event.getEnd().getDateTime().getValue());
-                String stEnd = dtExibicao.format(dtEnd);
-                myEvent.setStart("");
+                    SimpleDateFormat dtExibicao = new SimpleDateFormat("dd/MM/yyyy");
+                    Date dtStart = new Date(event.getStart().getDateTime().getValue());
+                    String stStart = dtExibicao.format(dtStart);
+                    Date dtEnd = new Date(event.getEnd().getDateTime().getValue());
+                    String stEnd = dtExibicao.format(dtEnd);
 
-                myEvent.setEnd(stEnd);
-                /*
-                if (String.valueOf(event.getStart()) != null) {
-                    myEvent.setStart(String.valueOf(event.getStart().getDate().getValue()));
-                } else {
-                    myEvent.setStart(" ");
+                    if (stStart == null) {
+                        myEvent.setStart("");
+                    } else {
+                        myEvent.setStart(stStart);
+                    }
+                    if (stEnd == null) {
+                        myEvent.setEnd("");
+                    } else {
+                        myEvent.setEnd(stEnd);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
-                if (String.valueOf(event.getEnd()) != null) {
-                    myEvent.setEnd(String.valueOf(event.getEnd().getDate().getValue()));
-                } else {
-                    myEvent.setEnd(" ");
-                }
-                */
+
 
 
                 db.addEvent(myEvent);

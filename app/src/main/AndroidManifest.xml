@@ -33,16 +33,17 @@
         <activity
             android:name=".Activities.GoogleCalendarActivity"
             android:screenOrientation="portrait">
-
-        </activity>
-        <activity
-            android:name=".Activities.GcActivity"
-            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity
+            android:name=".Activities.GcActivity"
+            >
+
         </activity>
 
         <receiver android:name=".MyWidgetProvider">
