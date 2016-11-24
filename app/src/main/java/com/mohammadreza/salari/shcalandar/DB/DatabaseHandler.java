@@ -104,6 +104,11 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return contact;
     }
 
+    public void clearDatabase(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String clearDBQuery = "DELETE FROM events";
+        db.execSQL(clearDBQuery);
+    }
 
     public List<MyEvent> getAllEvents() {
         List<MyEvent> eventList = new ArrayList<MyEvent>();

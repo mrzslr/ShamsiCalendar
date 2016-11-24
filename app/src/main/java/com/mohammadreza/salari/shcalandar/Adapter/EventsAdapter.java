@@ -16,6 +16,7 @@ import com.mohammadreza.salari.shcalandar.R;
 import com.mohammadreza.salari.shcalandar.Views.MyTextView;
 import com.mohammadreza.salari.shcalandar.Views.MyTextViewBold;
 
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -25,7 +26,7 @@ import java.util.List;
 public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewHolder> {
 
     private Context mContext;
-    private List<MyEvent> MyEventList;
+    private List<MyEvent> MyEventList = Collections.emptyList();
 
     public class EventViewHolder extends RecyclerView.ViewHolder {
         public MyTextViewBold txtSummary, txtLocation, txtDay;

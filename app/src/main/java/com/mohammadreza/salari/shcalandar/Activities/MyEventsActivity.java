@@ -1,7 +1,13 @@
 package com.mohammadreza.salari.shcalandar.Activities;
 
+import com.bumptech.glide.Glide;
+import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.ResultCallback;
+import com.google.android.gms.common.api.Status;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.googleapis.extensions.android.gms.auth.GoogleAccountCredential;
 import com.google.api.client.googleapis.extensions.android.gms.auth.GooglePlayServicesAvailabilityIOException;
@@ -16,18 +22,19 @@ import com.google.api.services.calendar.CalendarScopes;
 import com.google.api.client.util.DateTime;
 
 import com.google.api.services.calendar.model.*;
+import com.mikhaellopez.circularimageview.CircularImageView;
 import com.mohammadreza.salari.shcalandar.Adapter.EventsAdapter;
 import com.mohammadreza.salari.shcalandar.DB.DatabaseHandler;
 import com.mohammadreza.salari.shcalandar.Model.MyEvent;
 import com.mohammadreza.salari.shcalandar.R;
-import com.mohammadreza.salari.shcalandar.Utils.PersianCalendarUtils;
+import com.mohammadreza.salari.shcalandar.Views.MyTextViewBold;
 
 import android.Manifest;
 import android.accounts.AccountManager;
-import android.app.Activity;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
@@ -37,21 +44,19 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
-import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.util.TypedValue;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.IOException;
@@ -69,13 +74,13 @@ import pub.devrel.easypermissions.EasyPermissions;
  * Created by MohammadReza on 11/22/2016.
  */
 
-public class GcActivity extends AppCompatActivity implements EasyPermissions.PermissionCallbacks {
+public class MyEventsActivity extends AppCompatActivity implements EasyPermissions.PermissionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
     Toolbar toolbar;
 
     GoogleAccountCredential mCredential;
     ProgressDialog mProgress;
-
+    private static final String TAG = "MyEventsActivity";
     static final int REQUEST_ACCOUNT_PICKER = 1000;
     static final int REQUEST_AUTHORIZATION = 1001;
     static final int REQUEST_GOOGLE_PLAY_SERVICES = 1002;
@@ -93,10 +98,17 @@ public class GcActivity extends AppCompatActivity implements EasyPermissions.Per
     EventsAdapter eventsAdapter;
     DatabaseHandler db;
 
+    CircularImageView imgPersonPhoto;
+    MyTextViewBold txtPersonName;
+    private GoogleApiClient mGoogleApiClient;
+    SharedPreferences mSettings;
+    SharedPreferences preferences;
+    FloatingActionButton fabUpdateEvents;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gc);
+        setContentView(R.layout.activity_my_events);
         toolbar = (Toolbar) findViewById(R.id.toolbar_gc);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -104,10 +116,32 @@ public class GcActivity extends AppCompatActivity implements EasyPermissions.Per
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                finish();
+            }
+        });
+        fabUpdateEvents = (FloatingActionButton) findViewById(R.id.fab_update_events);
+        fabUpdateEvents.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                db.clearDatabase();
+                myEvents.clear();
+                dbEvents.clear();
+                eventsAdapter.notifyDataSetChanged();
                 getResultsFromApi();
             }
         });
+        txtPersonName = (MyTextViewBold) findViewById(R.id.txtPersonName);
+        imgPersonPhoto = (CircularImageView) findViewById(R.id.imgPersonPhoto);
+        mSettings = getSharedPreferences("googleAccount", 0);
+        String personName = mSettings.getString("personName", "missing");
+        txtPersonName.setText(personName);
+        try {
 
+            Glide.with(MyEventsActivity.this).load(mSettings.getString("personPhotoUrl", "missing")).into(imgPersonPhoto);
+        } catch (IllegalArgumentException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
         db = new DatabaseHandler(this);
         rvEvents = (RecyclerView) findViewById(R.id.rvEvents);
 
@@ -115,12 +149,11 @@ public class GcActivity extends AppCompatActivity implements EasyPermissions.Per
         dbEvents = new ArrayList<MyEvent>();
         mProgress = new ProgressDialog(this);
         mProgress.setMessage("Calling Google Calendar API ...");
-        dbEvents = db.getAllEvents();
-        eventsAdapter = new EventsAdapter(GcActivity.this, dbEvents);
+
+        eventsAdapter = new EventsAdapter(MyEventsActivity.this, myEvents);
         rvEvents.setHasFixedSize(true);
         LinearLayoutManager llm = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         rvEvents.setLayoutManager(llm);
-
         rvEvents.setAdapter(eventsAdapter);
 
         // Initialize credentials and service object.
@@ -128,13 +161,25 @@ public class GcActivity extends AppCompatActivity implements EasyPermissions.Per
                 getApplicationContext(), Arrays.asList(SCOPES))
                 .setBackOff(new ExponentialBackOff());
 
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build();
+        mGoogleApiClient = new GoogleApiClient.Builder(MyEventsActivity.this)
+                .enableAutoManage(MyEventsActivity.this /* FragmentActivity */, MyEventsActivity.this /* OnConnectionFailedListener */)
+                .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
+                .build();
 
+
+        if (!mSettings.contains("loaded")) {
+            getResultsFromApi();
+        } else {
+            myEvents.clear();
+            dbEvents = db.getAllEvents();
+            myEvents.addAll(dbEvents);
+            eventsAdapter.notifyDataSetChanged();
+        }
     }
 
-    private int dpToPx(int dp) {
-        Resources r = getResources();
-        return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics()));
-    }
 
     /**
      * Attempt to call the API, after verifying that all the preconditions are
@@ -149,7 +194,7 @@ public class GcActivity extends AppCompatActivity implements EasyPermissions.Per
         } else if (mCredential.getSelectedAccountName() == null) {
             chooseAccount();
         } else if (!isDeviceOnline()) {
-            Toast.makeText(GcActivity.this, "No Internet Connection ...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MyEventsActivity.this, "No Internet Connection ...", Toast.LENGTH_SHORT).show();
         } else {
             new MakeRequestTask(mCredential).execute();
         }
@@ -187,7 +232,7 @@ public class GcActivity extends AppCompatActivity implements EasyPermissions.Per
         switch (requestCode) {
             case REQUEST_GOOGLE_PLAY_SERVICES:
                 if (resultCode != RESULT_OK) {
-                    Toast.makeText(GcActivity.this,
+                    Toast.makeText(MyEventsActivity.this,
                             "This app requires Google Play Services. Please install " +
                                     "Google Play Services on your device and relaunch this app.", Toast.LENGTH_SHORT);
                 } else {
@@ -276,10 +321,17 @@ public class GcActivity extends AppCompatActivity implements EasyPermissions.Per
             final int connectionStatusCode) {
         GoogleApiAvailability apiAvailability = GoogleApiAvailability.getInstance();
         Dialog dialog = apiAvailability.getErrorDialog(
-                GcActivity.this,
+                MyEventsActivity.this,
                 connectionStatusCode,
                 REQUEST_GOOGLE_PLAY_SERVICES);
         dialog.show();
+    }
+
+    @Override
+    public void onConnectionFailed(ConnectionResult connectionResult) {
+        // An unresolvable error has occurred and Google APIs (including Sign-In) will not
+        // be available.
+        Log.d(TAG, "onConnectionFailed:" + connectionResult);
     }
 
     private class MakeRequestTask extends AsyncTask<Void, Void, List<String>> {
@@ -320,7 +372,7 @@ public class GcActivity extends AppCompatActivity implements EasyPermissions.Per
             List<Event> items = events.getItems();
             for (Event event : items) {
                 //DateTime start = event.getStart().getDateTime();
-              MyEvent myEvent = new MyEvent();
+                MyEvent myEvent = new MyEvent();
                 if (event.getId() != null) {
                     myEvent.setId(event.getId());
                 } else {
@@ -365,9 +417,10 @@ public class GcActivity extends AppCompatActivity implements EasyPermissions.Per
                 }
 
 
-
                 db.addEvent(myEvent);
             }
+
+
             return eventStrings;
         }
 
@@ -381,15 +434,17 @@ public class GcActivity extends AppCompatActivity implements EasyPermissions.Per
         @Override
         protected void onPostExecute(List<String> output) {
             mProgress.hide();
-            /*
-            if (output == null || output.size() == 0) {
-                Toast.makeText(GcActivity.this, "No results returned.", Toast.LENGTH_SHORT).show();
-            } else {
-                output.add(0, "Data retrieved using the Google Calendar API:");
-                Toast.makeText(GcActivity.this, TextUtils.join("\n", output), Toast.LENGTH_SHORT).show();
 
+
+            dbEvents = db.getAllEvents();
+
+            myEvents.addAll(dbEvents);
+            eventsAdapter.notifyDataSetChanged();
+            if (!mSettings.contains("loaded")) {
+                SharedPreferences.Editor editor = mSettings.edit();
+                editor.putBoolean("loaded", true);
+                editor.apply();
             }
-            */
 
             /*
             for (int i = 0; i < myEvents.size(); i++) {
@@ -409,15 +464,91 @@ public class GcActivity extends AppCompatActivity implements EasyPermissions.Per
                 } else if (mLastError instanceof UserRecoverableAuthIOException) {
                     startActivityForResult(
                             ((UserRecoverableAuthIOException) mLastError).getIntent(),
-                            GcActivity.REQUEST_AUTHORIZATION);
+                            MyEventsActivity.REQUEST_AUTHORIZATION);
                 } else {
-                    Toast.makeText(GcActivity.this, "The following error occurred:\n"
+                    Toast.makeText(MyEventsActivity.this, "The following error occurred:\n"
                             + mLastError.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             } else {
-                Toast.makeText(GcActivity.this, "Request cancelled.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MyEventsActivity.this, "Request cancelled.", Toast.LENGTH_SHORT).show();
             }
         }
     }
 
+    private void signOut() {
+        Auth.GoogleSignInApi.signOut(mGoogleApiClient).setResultCallback(
+                new ResultCallback<Status>() {
+                    @Override
+                    public void onResult(Status status) {
+                        try {
+                            DatabaseHandler db = new DatabaseHandler(MyEventsActivity.this);
+                            db.clearDatabase();
+                            SharedPreferences mea = getSharedPreferences("Activities.MyEventsActivity", 0);
+                            mea.edit().remove("").commit();
+                            SharedPreferences gms = getSharedPreferences("com.google.android.gms.signin", 0);
+                            gms.edit().clear().commit();
+                            SharedPreferences gmsm = getSharedPreferences("com.google.android.gms.measurement.pref", 0);
+                            gmsm.edit().clear().commit();
+                            SharedPreferences ga = getSharedPreferences("googleAccount", 0);
+                            ga.edit().clear().commit();
+
+
+                            MyEventsActivity.this.finish();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+    }
+
+    private void revokeAccess() {
+        Auth.GoogleSignInApi.revokeAccess(mGoogleApiClient).setResultCallback(
+                new ResultCallback<Status>() {
+                    @Override
+                    public void onResult(Status status) {
+                        // [START_EXCLUDE]
+                        //updateUI(false);
+                        // [END_EXCLUDE]
+                    }
+                });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_google_calendar, menu);
+        return true;
+
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_signout:
+                new AlertDialog.Builder(MyEventsActivity.this)
+                        .setTitle("خروج از حساب کاربری")
+                        .setMessage("میخوای از حساب کاربریت خارج بشی؟")
+                        .setPositiveButton("آره", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                signOut();
+                            }
+                        })
+                        .setNegativeButton("نه", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                // do nothing
+                            }
+                        })
+                        .setIcon(R.drawable.ic_signout_red)
+                        .show();
+                return true;
+
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
+
+    }
 }

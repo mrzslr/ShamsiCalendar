@@ -1,11 +1,7 @@
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:fontPath="http://schemas.android.com/tools"
-    xmlns:persianDatePicker="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     android:fitsSystemWindows="true">
 
     <android.support.design.widget.AppBarLayout
@@ -54,64 +50,41 @@
                     android:background="@drawable/gradient_black_85_top" />
 
 
-                <com.mohammadreza.salari.shcalandar.Views.MyTextViewBold
-                    android:id="@+id/txtShamsiDate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:id="@+id/imgPersonPhoto"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:layout_below="@+id/view"
+                    app:civ_shadow="true"
+                    app:civ_shadow_radius="5"
                     android:layout_marginRight="16dp"
-                    android:layout_marginTop="0dp"
-                    android:text="یکشنبه 1 فروردین 1395"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="#ffffff" />
+                    android:layout_marginTop="24dp"
+                    android:src="@drawable/ic_circle"
 
-                <com.mohammadreza.salari.shcalandar.Views.MyTextView
-                    android:id="@+id/txtMiladiDate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_below="@+id/txtShamsiDate"
-                    android:layout_marginRight="16dp"
-                    android:layout_marginTop="8dp"
-                    android:text="Sunday 2016 March 02"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="#ffffff" />
+                    />
 
-                <com.mohammadreza.salari.shcalandar.Views.MyTextView
-                    android:id="@+id/txtHejriDate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_below="@+id/txtMiladiDate"
-                    android:layout_marginRight="16dp"
-                    android:layout_marginTop="8dp"
-                    android:text=""
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="#ffffff" />
-
-                <com.mohammadreza.salari.shcalandar.Views.MyTextView
-                    android:id="@+id/txtTodayEvent"
+                <com.mohammadreza.salari.shcalandar.Views.MyTextViewBold
+                    android:id="@+id/txtPersonName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_below="@+id/txtHejriDate"
+                    android:layout_centerVertical="true"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="16dp"
-                    android:layout_marginTop="8dp"
-                    android:maxLines="2"
-                    android:text=""
+                    android:layout_toLeftOf="@+id/imgPersonPhoto"
+                    android:layout_toStartOf="@+id/imgPersonPhoto"
+                    android:gravity="right"
+                    android:text="TextView"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/m_red" />
+                    android:textStyle="bold" />
+
+
             </RelativeLayout>
 
 
             <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
+                android:id="@+id/toolbar_gc"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:layout_gravity="right"
@@ -140,38 +113,24 @@
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 
-    <android.support.v4.widget.NestedScrollView
-        android:id="@+id/recycle_scroll"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-        <android.support.v7.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <com.mohammadreza.salari.shcalandar.PersianDatePicker
-                android:id="@+id/PersianDatePicker"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                persianDatePicker:disableAddKey="true"
-                persianDatePicker:externalPersianCalendar="true" />
-
-
-        </android.support.v7.widget.LinearLayoutCompat>
-    </android.support.v4.widget.NestedScrollView>
-
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:clickable="true"
-        app:backgroundTint="#7b1fa2"
+        android:id="@+id/fab_update_events"
+        app:srcCompat="@drawable/ic_reload"
         app:layout_anchor="@+id/appbar"
-        app:layout_anchorGravity="bottom|right|end"
-        app:srcCompat="@drawable/ic_calendar" />
+        app:layout_anchorGravity="bottom|left|start"
+        />
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvEvents"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
 
 
 </android.support.design.widget.CoordinatorLayout>

@@ -268,6 +268,7 @@ public class PersianDatePicker extends LinearLayout implements View.OnClickListe
                         intent.putExtra("shamsi_date", pCalendar.getPersianLongDate());
                         intent.putExtra("miladi_date", formattedDate);
                         intent.putExtra("hejri_date", pCalendar.writeIslamicDate());
+                        intent.putExtra("shamsi_event", pCalendar.getGEvent(day)+" - "+pCalendar.getPEvent(day) + " - "+pCalendar.getHEvent(day));
                         context.startActivity(intent);
 
 
