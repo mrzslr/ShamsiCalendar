@@ -16,7 +16,7 @@ import android.widget.RemoteViews;
 import com.mohammadreza.salari.shcalandar.Activities.MainActivity;
 
 
-public class MyWidgetProvider extends AppWidgetProvider {
+public class MediumWidgetProvider extends AppWidgetProvider {
     //	PersianCalendar pCalendar;
     MyApplication app;
 
@@ -26,7 +26,7 @@ public class MyWidgetProvider extends AppWidgetProvider {
         app = (MyApplication) context.getApplicationContext();
         // initializing widget layout
         RemoteViews remoteViews = new RemoteViews(context.getPackageName(),
-                R.layout.widget_layout);
+                R.layout.medium_widget_layout);
         app.pCalendar.goToCurrentDate();
         //pCalendar=new PersianCalendar(context);
         // register for button event
@@ -57,7 +57,7 @@ public class MyWidgetProvider extends AppWidgetProvider {
 
     public static void pushWidgetUpdate(Context context, RemoteViews remoteViews) {
         ComponentName myWidget = new ComponentName(context,
-                MyWidgetProvider.class);
+                MediumWidgetProvider.class);
         AppWidgetManager manager = AppWidgetManager.getInstance(context);
         manager.updateAppWidget(myWidget, remoteViews);
     }

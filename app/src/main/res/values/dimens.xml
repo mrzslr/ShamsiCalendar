@@ -2,4 +2,8 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="header_size">230dp</dimen>
+    <dimen name="day_text_size">18sp</dimen>
+    <dimen name="main_month_text_size">10sp</dimen>
+    <dimen name="main_year_text_size">15sp</dimen>
 </resources>

@@ -209,13 +209,16 @@ public class MainActivity extends AppCompatActivity implements PersianDatePicker
             Uri personPhotoUrl = acct.getPhotoUrl();
             String email = acct.getEmail();
             //Glide.with(GoogleCalendarActivity.this).load(personPhotoUrl).into(imgProfilePic);
-
-            mSettings = getSharedPreferences("googleAccount", 0);
-            SharedPreferences.Editor editor = mSettings.edit();
-            editor.putString("personName", personName);
-            editor.putString("email", email);
-            editor.putString("personPhotoUrl", personPhotoUrl.toString());
-            editor.apply();
+            try {
+                mSettings = getSharedPreferences("googleAccount", 0);
+                SharedPreferences.Editor editor = mSettings.edit();
+                editor.putString("personName", personName);
+                editor.putString("email", email);
+                editor.putString("personPhotoUrl", personPhotoUrl.toString());
+                editor.apply();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             startActivity(new Intent(MainActivity.this, MyEventsActivity.class));
         } else {
             // Signed out, show unauthenticated UI.

@@ -8,6 +8,7 @@
 
     <FrameLayout
         android:layout_width="match_parent"
+
         android:layout_height="wrap_content">
 
         <LinearLayout
@@ -15,23 +16,25 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/b_header"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingBottom="8dp">
 
             <ImageButton
                 android:id="@+id/prev"
                 style="?android:borderlessButtonStyle"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:background="?attr/selectableItemBackground"
                 android:clickable="true"
-
                 android:contentDescription="@string/time_prev"
                 app:srcCompat="@drawable/ic_keyboard_arrow_left_black_24dp" />
 
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="64dp"
                 android:layout_weight="1"
+
                 android:orientation="vertical">
 
                 <com.mohammadreza.salari.shcalandar.Views.MyTextViewBold
@@ -41,37 +44,39 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:textColor="@color/black"
-                    android:textSize="15sp" />
+                    android:textSize="@dimen/main_year_text_size" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+
                     android:orientation="horizontal">
 
                     <com.mohammadreza.salari.shcalandar.Views.MyTextView
                         android:id="@+id/titleUp"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="left"
-                        android:textSize="10sp"
+                        android:textSize="@dimen/main_month_text_size"
                         tools:ignore="SmallSp" />
 
                     <View
-                        android:layout_width="5dp"
+                        android:layout_width="4dp"
                         android:layout_height="match_parent" />
 
                     <com.mohammadreza.salari.shcalandar.Views.MyTextView
                         android:id="@+id/titleDown"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
-                        android:layout_gravity="right"
+
                         android:layout_weight="1"
                         android:gravity="right"
-                        android:textAlignment="gravity"
-                        android:textSize="10sp"
+
+
+                        android:textSize="@dimen/main_month_text_size"
                         tools:ignore="SmallSp" />
 
                 </LinearLayout>
@@ -83,6 +88,7 @@
                 style="?android:borderlessButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:background="?attr/selectableItemBackground"
                 android:clickable="true"
                 android:contentDescription="@string/time_next"
@@ -118,7 +124,8 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="ج"
-            android:textAllCaps="true" />
+            android:textAllCaps="true"
+            android:textSize="@dimen/day_text_size" />
 
         <com.mohammadreza.salari.shcalandar.Views.MyTextViewBold
             android:layout_width="0dp"
@@ -126,7 +133,8 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="پ"
-            android:textAllCaps="true" />
+            android:textAllCaps="true"
+            android:textSize="@dimen/day_text_size" />
 
         <com.mohammadreza.salari.shcalandar.Views.MyTextViewBold
             android:layout_width="0dp"
@@ -134,7 +142,8 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="چ"
-            android:textAllCaps="true" />
+            android:textAllCaps="true"
+            android:textSize="@dimen/day_text_size" />
 
         <com.mohammadreza.salari.shcalandar.Views.MyTextViewBold
             android:layout_width="0dp"
@@ -142,7 +151,8 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="س"
-            android:textAllCaps="true" />
+            android:textAllCaps="true"
+            android:textSize="@dimen/day_text_size" />
 
         <com.mohammadreza.salari.shcalandar.Views.MyTextViewBold
             android:layout_width="0dp"
@@ -150,7 +160,8 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="د"
-            android:textAllCaps="true" />
+            android:textAllCaps="true"
+            android:textSize="@dimen/day_text_size" />
 
         <com.mohammadreza.salari.shcalandar.Views.MyTextViewBold
             android:layout_width="0dp"
@@ -158,7 +169,8 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="ی"
-            android:textAllCaps="true" />
+            android:textAllCaps="true"
+            android:textSize="@dimen/day_text_size" />
 
         <com.mohammadreza.salari.shcalandar.Views.MyTextViewBold
             android:layout_width="0dp"
@@ -166,7 +178,8 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="ش"
-            android:textAllCaps="true" />
+            android:textAllCaps="true"
+            android:textSize="@dimen/day_text_size" />
 
     </LinearLayout>
 

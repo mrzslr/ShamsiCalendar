@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--(((Number of columns / rows) * 74) - 2) -->
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
-    android:initialLayout="@layout/widget_layout"
-    android:minHeight="220dp"
+    android:initialLayout="@layout/medium_widget_layout"
+    android:minHeight="100dp"
     android:minWidth="320dp"
-    android:previewImage="@mipmap/ic_launcher"
+    android:previewImage="@drawable/widget_preview"
     android:updatePeriodMillis="1000000" >
 </appwidget-provider>

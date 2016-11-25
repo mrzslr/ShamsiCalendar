@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="header_size">400dp</dimen>
+    <dimen name="day_text_size">24sp</dimen>
+    <dimen name="main_month_text_size">15sp</dimen>
+    <dimen name="main_year_text_size">20sp</dimen>
+</resources>

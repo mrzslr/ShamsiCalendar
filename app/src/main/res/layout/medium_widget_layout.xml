@@ -4,30 +4,28 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:layout_margin="5sp"
-    android:background="@drawable/appwidget_dark_bg"
+   
     android:orientation="vertical">
 
 
     <LinearLayout
         android:id="@+id/contentContainer"
         android:layout_width="fill_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:orientation="vertical"
-        android:padding="8dp"
-
-        >
+        android:padding="8dp">
 
 
         <TextView
             android:id="@+id/title"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="5dp"
-            android:text=""
             android:layout_marginTop="10dp"
+            android:paddingBottom="5dp"
+            android:text="جمعه 5 آذر 1395"
             android:textColor="#fcfcfc"
-            android:textSize="16sp"
+            android:textSize="18sp"
             android:textStyle="bold"
 
             />
@@ -37,8 +35,8 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:maxLines="5"
-            android:text=""
-            android:textColor="#fcfcfc"
+            android:text="روز بسیج مستضعفان "
+            android:textColor="@color/m_red"
             android:textSize="13sp"
             android:textStyle="normal"
 

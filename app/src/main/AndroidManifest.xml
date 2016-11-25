@@ -39,16 +39,15 @@
 
         </activity>
 
-        <receiver android:name=".MyWidgetProvider">
+        <receiver android:name=".MediumWidgetProvider">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
 
             <meta-data
                 android:name="android.appwidget.provider"
-                android:resource="@xml/demo_widget_provider" />
+                android:resource="@xml/medium_widget_provider" />
         </receiver>
-
 
         <meta-data
             android:name="com.google.android.gms.version"
