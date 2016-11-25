@@ -4,4 +4,5 @@
     <dimen name="day_text_size">24sp</dimen>
     <dimen name="main_month_text_size">15sp</dimen>
     <dimen name="main_year_text_size">20sp</dimen>
+    <dimen name="header_content_margin_top">72dp</dimen>
 </resources>

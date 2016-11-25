@@ -37,9 +37,6 @@ import android.content.*;
  * </pre>
  *
  *
- * @author MohammadReza Salari contact: <a
- *         href="mailto:frishter.ms@gmail.com">frishter.ms@gmail.com</a>
- * @version 1.0
  */
 
 public class PersianDateParser {

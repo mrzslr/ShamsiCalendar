@@ -18,12 +18,7 @@
  */
 package com.mohammadreza.salari.shcalandar.Utils;
 
-/**
- * 
- * @author MohammadReza Salari contact: <a
- *         href="mailto:frishter.ms@gmail.com">frishter.ms@gmail.com</a>
- * @version 1.0
- */
+
 public class PersianCalendarConstants {
 
 	// 00:00:00 UTC (Gregorian) Julian day 0,

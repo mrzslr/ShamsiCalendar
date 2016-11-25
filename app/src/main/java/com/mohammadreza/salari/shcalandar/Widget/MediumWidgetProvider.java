@@ -1,4 +1,4 @@
-package com.mohammadreza.salari.shcalandar;
+package com.mohammadreza.salari.shcalandar.Widget;
 
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
@@ -14,6 +14,8 @@ import android.graphics.Typeface;
 import android.widget.RemoteViews;
 
 import com.mohammadreza.salari.shcalandar.Activities.MainActivity;
+import com.mohammadreza.salari.shcalandar.Application.MyApplication;
+import com.mohammadreza.salari.shcalandar.R;
 
 
 public class MediumWidgetProvider extends AppWidgetProvider {

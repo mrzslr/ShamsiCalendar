@@ -37,10 +37,7 @@ import android.content.*;
  *       persianCal.addPersianDate(Calendar.DATE, 50);
  * 
  * }
- * 
- * <pre>
- * @author MohammadReza Salari  contact: <a href="mailto:frishter.ms@gmail.com">frishter.ms@gmail.com</a>
- * @version 1.1
+ *
  */
 public class PersianCalendar extends GregorianCalendar {
 

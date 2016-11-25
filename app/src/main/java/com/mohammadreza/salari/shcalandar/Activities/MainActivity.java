@@ -13,11 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.*;
 
 import java.text.*;
@@ -34,8 +30,8 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
-import com.mohammadreza.salari.shcalandar.MyApplication;
-import com.mohammadreza.salari.shcalandar.PersianDatePicker;
+import com.mohammadreza.salari.shcalandar.Application.MyApplication;
+import com.mohammadreza.salari.shcalandar.Calendar.PersianDatePicker;
 import com.mohammadreza.salari.shcalandar.R;
 import com.mohammadreza.salari.shcalandar.Utils.PersianCalendar;
 import com.mohammadreza.salari.shcalandar.Views.MyTextView;

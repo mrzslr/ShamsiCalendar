@@ -115,7 +115,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:background="@color/white"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/week_days_background"
         android:orientation="horizontal">
 
         <com.mohammadreza.salari.shcalandar.Views.MyTextViewBold
@@ -125,6 +127,7 @@
             android:gravity="center"
             android:text="ج"
             android:textAllCaps="true"
+            android:textColor="@color/white"
             android:textSize="@dimen/day_text_size" />
 
         <com.mohammadreza.salari.shcalandar.Views.MyTextViewBold
@@ -134,6 +137,7 @@
             android:gravity="center"
             android:text="پ"
             android:textAllCaps="true"
+            android:textColor="@color/white"
             android:textSize="@dimen/day_text_size" />
 
         <com.mohammadreza.salari.shcalandar.Views.MyTextViewBold
@@ -143,6 +147,7 @@
             android:gravity="center"
             android:text="چ"
             android:textAllCaps="true"
+            android:textColor="@color/white"
             android:textSize="@dimen/day_text_size" />
 
         <com.mohammadreza.salari.shcalandar.Views.MyTextViewBold
@@ -152,6 +157,7 @@
             android:gravity="center"
             android:text="س"
             android:textAllCaps="true"
+            android:textColor="@color/white"
             android:textSize="@dimen/day_text_size" />
 
         <com.mohammadreza.salari.shcalandar.Views.MyTextViewBold
@@ -161,6 +167,7 @@
             android:gravity="center"
             android:text="د"
             android:textAllCaps="true"
+            android:textColor="@color/white"
             android:textSize="@dimen/day_text_size" />
 
         <com.mohammadreza.salari.shcalandar.Views.MyTextViewBold
@@ -170,6 +177,7 @@
             android:gravity="center"
             android:text="ی"
             android:textAllCaps="true"
+            android:textColor="@color/white"
             android:textSize="@dimen/day_text_size" />
 
         <com.mohammadreza.salari.shcalandar.Views.MyTextViewBold
@@ -179,6 +187,7 @@
             android:gravity="center"
             android:text="ش"
             android:textAllCaps="true"
+            android:textColor="@color/white"
             android:textSize="@dimen/day_text_size" />
 
     </LinearLayout>
@@ -188,6 +197,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#FFFFFF"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:orientation="vertical">
 
         <include layout="@layout/week_layout" />

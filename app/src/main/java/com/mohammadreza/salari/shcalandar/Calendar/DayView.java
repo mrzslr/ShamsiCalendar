@@ -1,4 +1,4 @@
-package com.mohammadreza.salari.shcalandar;
+package com.mohammadreza.salari.shcalandar.Calendar;
 
 import android.content.Context;
 import android.media.Image;
@@ -9,6 +9,7 @@ import android.view.*;
 import android.graphics.*;
 import android.text.*;
 
+import com.mohammadreza.salari.shcalandar.R;
 import com.mohammadreza.salari.shcalandar.Views.MyTextView;
 
 

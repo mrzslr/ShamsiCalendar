@@ -12,7 +12,7 @@
 
 
     <application
-        android:name=".MyApplication"
+        android:name=".Application.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -31,15 +31,12 @@
             android:name=".Activities.DayDetailsActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Transparent"></activity>
-        <activity
-            android:name=".Activities.AboutActivity"
-            android:screenOrientation="portrait"></activity>
 
         <activity android:name=".Activities.MyEventsActivity">
 
         </activity>
 
-        <receiver android:name=".MediumWidgetProvider">
+        <receiver android:name=".Widget.MediumWidgetProvider">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>

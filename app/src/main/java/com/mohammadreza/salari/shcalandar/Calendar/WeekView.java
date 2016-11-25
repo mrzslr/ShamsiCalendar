@@ -1,13 +1,11 @@
-package com.mohammadreza.salari.shcalandar;
+package com.mohammadreza.salari.shcalandar.Calendar;
 
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * Created by Blaz Solar on 24/02/14 Edited by Irshst 2016.
- */
+
 public class WeekView extends ViewGroup {
 
     private static final String TAG = "WeekView";

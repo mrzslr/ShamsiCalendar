@@ -1,32 +1,22 @@
-package com.mohammadreza.salari.shcalandar;
+package com.mohammadreza.salari.shcalandar.Calendar;
 
 
 import java.text.SimpleDateFormat;
 
-import android.app.Activity;
-import android.app.ActivityOptions;
-import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.TypedArray;
-import android.graphics.drawable.ColorDrawable;
-import android.os.Build;
-import android.os.Bundle;
-import android.support.v4.app.ActivityOptionsCompat;
 import android.util.AttributeSet;
-import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.Window;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.*;
 
 import com.mohammadreza.salari.shcalandar.Activities.DayDetailsActivity;
+import com.mohammadreza.salari.shcalandar.R;
 import com.mohammadreza.salari.shcalandar.Utils.PersianCalendar;
 import com.mohammadreza.salari.shcalandar.Utils.PersianCalendarConstants;
-import com.mohammadreza.salari.shcalandar.Views.MyTextView;
-import com.mohammadreza.salari.shcalandar.Views.MyTextViewBold;
 
 import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 

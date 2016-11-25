@@ -62,7 +62,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_below="@+id/view"
                     android:layout_marginRight="16dp"
-                    android:layout_marginTop="0dp"
+                    android:layout_marginTop="@dimen/header_content_margin_top"
                     android:text="یکشنبه 1 فروردین 1395"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="#ffffff" />
@@ -150,7 +150,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <com.mohammadreza.salari.shcalandar.PersianDatePicker
+            <com.mohammadreza.salari.shcalandar.Calendar.PersianDatePicker
                 android:id="@+id/PersianDatePicker"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
