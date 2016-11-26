@@ -50,8 +50,7 @@
                 <View
                     android:id="@+id/view"
                     android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"
-                    android:background="@drawable/gradient_black_85_top" />
+                    android:layout_height="?attr/actionBarSize" />
 
 
                 <com.mohammadreza.salari.shcalandar.Views.MyTextViewBold
@@ -65,7 +64,9 @@
                     android:layout_marginTop="@dimen/header_content_margin_top"
                     android:text="یکشنبه 1 فروردین 1395"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="#ffffff" />
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/header_main_text_size"
+                    android:textStyle="bold" />
 
                 <com.mohammadreza.salari.shcalandar.Views.MyTextView
                     android:id="@+id/txtMiladiDate"
@@ -78,7 +79,8 @@
                     android:layout_marginTop="8dp"
                     android:text="Sunday 2016 March 02"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="#ffffff" />
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/header_miladi_text_size" />
 
                 <com.mohammadreza.salari.shcalandar.Views.MyTextView
                     android:id="@+id/txtHejriDate"
@@ -89,9 +91,10 @@
                     android:layout_below="@+id/txtMiladiDate"
                     android:layout_marginRight="16dp"
                     android:layout_marginTop="8dp"
-                    android:text=""
+                    android:text="البست . صفر 1433"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="#ffffff" />
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/header_hejri_text_size" />
 
                 <com.mohammadreza.salari.shcalandar.Views.MyTextView
                     android:id="@+id/txtTodayEvent"
@@ -168,10 +171,10 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:clickable="true"
-        app:backgroundTint="#7b1fa2"
+        app:backgroundTint="@color/colorAccent"
         app:layout_anchor="@+id/appbar"
         app:layout_anchorGravity="bottom|right|end"
-        app:srcCompat="@drawable/ic_calendar" />
+        app:srcCompat="@drawable/ic_google_search" />
 
 
 </android.support.design.widget.CoordinatorLayout>

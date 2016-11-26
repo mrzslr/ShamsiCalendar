@@ -2,4 +2,6 @@
 <resources>
     <dimen name="header_size">200dp</dimen>
     <dimen name="header_content_margin_top">48dp</dimen>
+    <dimen name="person_photo_size">72dp</dimen>
+
 </resources>

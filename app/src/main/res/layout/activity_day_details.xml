@@ -22,7 +22,6 @@
             android:orientation="vertical">
 
             <RelativeLayout
-
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize">
 
@@ -30,19 +29,20 @@
                     android:id="@+id/dialog_shamsi_date"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_alignParentBottom="true"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+
                     android:layout_gravity="center"
                     android:layout_toLeftOf="@+id/linearLayout2"
                     android:layout_toStartOf="@+id/linearLayout2"
                     android:background="@color/colorPrimaryDark"
                     android:gravity="center"
                     android:singleLine="true"
-                    android:text="The Revenant"
+
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="#ffffff"
-                    android:textSize="20sp" />
+                    android:textSize="@dimen/event_details_text_size" />
 
                 <LinearLayout
                     android:id="@+id/linearLayout2"
@@ -77,13 +77,15 @@
                 android:layout_alignLeft="@+id/dialog_miladi_date"
                 android:layout_alignStart="@+id/dialog_miladi_date"
                 android:layout_below="@+id/dialog_miladi_date"
+                android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:layout_marginTop="13dp"
                 android:gravity="right"
                 android:paddingTop="16dp"
-
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/white" />
+
+                android:textColor="@color/white"
+                android:textSize="@dimen/event_details_text_size" />
 
             <com.mohammadreza.salari.shcalandar.Views.MyTextView
                 android:id="@+id/dialog_miladi_date"
@@ -92,15 +94,15 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
 
-                android:layout_marginEnd="17dp"
+                android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:layout_marginTop="23dp"
                 android:gravity="right"
 
                 android:paddingBottom="16dp"
-
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:textSize="@dimen/event_details_text_size" />
 
             <com.mohammadreza.salari.shcalandar.Views.MyTextView
                 android:id="@+id/dialog_shamsi_event"
@@ -108,16 +110,16 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-
-                android:layout_marginEnd="17dp"
+                android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:layout_marginTop="16dp"
                 android:gravity="right"
-
                 android:paddingBottom="16dp"
 
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/m_red" />
+
+                android:textColor="@color/m_red"
+                android:textSize="@dimen/event_details_text_size" />
 
 
         </LinearLayout>

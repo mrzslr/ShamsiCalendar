@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
     android:id="@+id/lytBase"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:background="?android:attr/selectableItemBackground"
     android:clickable="true"
-    android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <LinearLayout
@@ -19,26 +19,28 @@
             android:orientation="vertical">
 
             <com.mohammadreza.salari.shcalandar.Views.MyTextViewBold
+                android:id="@+id/txtSummary"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_gravity="bottom"
-                android:id="@+id/txtSummary"
                 android:layout_marginRight="16dp"
                 android:layout_weight="0.50"
                 android:gravity="right|bottom"
                 android:text="Meet Farzad Akhondzadeh"
+                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@color/black" />
 
             <com.mohammadreza.salari.shcalandar.Views.MyTextViewBold
+                android:id="@+id/txtLocation"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_gravity="right|top"
-                android:id="@+id/txtLocation"
                 android:layout_marginRight="16dp"
                 android:layout_marginTop="8dp"
                 android:layout_weight="0.50"
                 android:gravity="right|top"
                 android:text="Iran , Bandar-e-Abbas"
+                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="#8f1d1d1d" />
 
         </LinearLayout>
@@ -47,28 +49,29 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.30"
-            android:background="@color/colorAccent"
+            android:background="@color/colorPrimaryDark"
             android:orientation="vertical">
 
             <com.mohammadreza.salari.shcalandar.Views.MyTextViewBold
+                android:id="@+id/txtDay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="24dp"
                 android:gravity="center"
-                android:id="@+id/txtDay"
                 android:text="25"
                 android:textColor="@color/white"
                 android:textSize="32sp"
                 android:textStyle="bold" />
 
             <com.mohammadreza.salari.shcalandar.Views.MyTextView
+                android:id="@+id/txtMonthYear"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:id="@+id/txtMonthYear"
                 android:text="مرداد"
+                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@color/white" />
         </LinearLayout>
 

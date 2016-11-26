@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#7b1fa2</color>
-    <color name="colorPrimaryDark">#7b1fa2</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#186E8F</color>
+    <color name="colorPrimaryDark">#0E5672</color>
+    <color name="colorAccent">#FAFAFA</color>
 
     <color name="text_normal">#626262</color>
     <color name="text_light">#ababab</color>
@@ -13,7 +13,7 @@
     <color name="stroke">#4386F6</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
-
+    <color name="dialog_background">#8f1d1d1d</color>
 
 
     <color name="m_red">#f44336</color>

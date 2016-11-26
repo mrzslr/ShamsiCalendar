@@ -1,5 +1,6 @@
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:wheel="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
@@ -46,22 +47,21 @@
                 <View
                     android:id="@+id/view"
                     android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"
-                    android:background="@drawable/gradient_black_85_top" />
+                    android:layout_height="?attr/actionBarSize" />
 
 
                 <com.mikhaellopez.circularimageview.CircularImageView
                     android:id="@+id/imgPersonPhoto"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
+                    android:layout_width="@dimen/person_photo_size"
+                    android:layout_height="@dimen/person_photo_size"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:layout_below="@+id/view"
-                    app:civ_shadow="true"
-                    app:civ_shadow_radius="5"
                     android:layout_marginRight="16dp"
                     android:layout_marginTop="24dp"
                     android:src="@drawable/ic_circle"
+                    app:civ_shadow="true"
+                    app:civ_shadow_radius="5"
 
                     />
 
@@ -70,11 +70,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="8dp"
+                    android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
+
                     android:layout_toLeftOf="@+id/imgPersonPhoto"
                     android:layout_toStartOf="@+id/imgPersonPhoto"
-                    android:gravity="right"
+                    android:gravity="right|center"
                     android:text="TextView"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textStyle="bold" />
@@ -95,18 +96,15 @@
 
                 app:titleMarginTop="13dp">
 
-                <com.mohammadreza.salari.shcalandar.Views.MyTextView
-                    android:id="@+id/toolbar_title"
+                <com.mohammadreza.salari.shcalandar.Views.ProgressWheel
+                    android:id="@+id/toolbar_progress"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginRight="16dp"
                     android:gravity="center"
-                    android:singleLine="true"
-                    android:text="تقویم شمسی"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@color/white"
-                    android:visibility="invisible" />
+                    android:visibility="visible"
+                    wheel:matProg_barColor="@color/colorAccent"
+                    wheel:matProg_progressIndeterminate="true" />
             </android.support.v7.widget.Toolbar>
 
 
@@ -114,15 +112,15 @@
     </android.support.design.widget.AppBarLayout>
 
     <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_update_events"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:clickable="true"
-        android:id="@+id/fab_update_events"
-        app:srcCompat="@drawable/ic_reload"
+        app:backgroundTint="@color/colorPrimaryDark"
         app:layout_anchor="@+id/appbar"
         app:layout_anchorGravity="bottom|left|start"
-        />
+        app:srcCompat="@drawable/ic_reload" />
 
 
     <android.support.v7.widget.RecyclerView
@@ -130,7 +128,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-
 
 
 </android.support.design.widget.CoordinatorLayout>
