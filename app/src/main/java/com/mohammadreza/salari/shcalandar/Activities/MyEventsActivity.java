@@ -12,15 +12,12 @@ import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.googleapis.extensions.android.gms.auth.GoogleAccountCredential;
 import com.google.api.client.googleapis.extensions.android.gms.auth.GooglePlayServicesAvailabilityIOException;
 import com.google.api.client.googleapis.extensions.android.gms.auth.UserRecoverableAuthIOException;
-
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.client.util.ExponentialBackOff;
-
 import com.google.api.services.calendar.CalendarScopes;
 import com.google.api.client.util.DateTime;
-
 import com.google.api.services.calendar.model.*;
 import com.mikhaellopez.circularimageview.CircularImageView;
 import com.mohammadreza.salari.shcalandar.Adapter.EventsAdapter;
@@ -28,16 +25,14 @@ import com.mohammadreza.salari.shcalandar.DB.DatabaseHandler;
 import com.mohammadreza.salari.shcalandar.Model.MyEvent;
 import com.mohammadreza.salari.shcalandar.R;
 import com.mohammadreza.salari.shcalandar.Views.MyTextViewBold;
-
+import com.mohammadreza.salari.shcalandar.Views.ProgressWheel;
 import android.Manifest;
 import android.accounts.AccountManager;
 import android.app.Dialog;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Resources;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
@@ -50,36 +45,27 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.text.TextUtils;
 import android.util.Log;
-import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
-
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
-
 import pub.devrel.easypermissions.AfterPermissionGranted;
 import pub.devrel.easypermissions.EasyPermissions;
 
 
-/**
- * Created by MohammadReza on 11/22/2016.
- */
 
 public class MyEventsActivity extends AppCompatActivity implements EasyPermissions.PermissionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
     Toolbar toolbar;
-
     GoogleAccountCredential mCredential;
-    ProgressDialog mProgress;
     private static final String TAG = "MyEventsActivity";
     static final int REQUEST_ACCOUNT_PICKER = 1000;
     static final int REQUEST_AUTHORIZATION = 1001;
@@ -104,6 +90,7 @@ public class MyEventsActivity extends AppCompatActivity implements EasyPermissio
     SharedPreferences mSettings;
     SharedPreferences preferences;
     FloatingActionButton fabUpdateEvents;
+    ProgressWheel progressLoading;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -119,17 +106,25 @@ public class MyEventsActivity extends AppCompatActivity implements EasyPermissio
                 finish();
             }
         });
+
+        progressLoading = (ProgressWheel) findViewById(R.id.progress_loading);
         fabUpdateEvents = (FloatingActionButton) findViewById(R.id.fab_update_events);
         fabUpdateEvents.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                db.clearDatabase();
-                myEvents.clear();
-                dbEvents.clear();
-                eventsAdapter.notifyDataSetChanged();
-                getResultsFromApi();
+                try {
+
+                    db.clearDatabase();
+                    myEvents.clear();
+                    dbEvents.clear();
+                    eventsAdapter.notifyDataSetChanged();
+                    getResultsFromApi();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
+
         txtPersonName = (MyTextViewBold) findViewById(R.id.txtPersonName);
         imgPersonPhoto = (CircularImageView) findViewById(R.id.imgPersonPhoto);
         mSettings = getSharedPreferences("googleAccount", 0);
@@ -147,8 +142,7 @@ public class MyEventsActivity extends AppCompatActivity implements EasyPermissio
 
         myEvents = new ArrayList<MyEvent>();
         dbEvents = new ArrayList<MyEvent>();
-        mProgress = new ProgressDialog(this);
-        mProgress.setMessage("Calling Google Calendar API ...");
+
 
         eventsAdapter = new EventsAdapter(MyEventsActivity.this, myEvents);
         rvEvents.setHasFixedSize(true);
@@ -194,7 +188,7 @@ public class MyEventsActivity extends AppCompatActivity implements EasyPermissio
         } else if (mCredential.getSelectedAccountName() == null) {
             chooseAccount();
         } else if (!isDeviceOnline()) {
-            Toast.makeText(MyEventsActivity.this, "No Internet Connection ...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MyEventsActivity.this, getResources().getString(R.string.internet_disconnect), Toast.LENGTH_SHORT).show();
         } else {
             new MakeRequestTask(mCredential).execute();
         }
@@ -219,7 +213,7 @@ public class MyEventsActivity extends AppCompatActivity implements EasyPermissio
             // Request the GET_ACCOUNTS permission via a user dialog
             EasyPermissions.requestPermissions(
                     this,
-                    "This app needs to access your Google account (via Contacts).",
+                    getResources().getString(R.string.google_account_permission),
                     REQUEST_PERMISSION_GET_ACCOUNTS,
                     Manifest.permission.GET_ACCOUNTS);
         }
@@ -232,9 +226,7 @@ public class MyEventsActivity extends AppCompatActivity implements EasyPermissio
         switch (requestCode) {
             case REQUEST_GOOGLE_PLAY_SERVICES:
                 if (resultCode != RESULT_OK) {
-                    Toast.makeText(MyEventsActivity.this,
-                            "This app requires Google Play Services. Please install " +
-                                    "Google Play Services on your device and relaunch this app.", Toast.LENGTH_SHORT);
+                    Toast.makeText(MyEventsActivity.this, getResources().getString(R.string.google_play_unavailable), Toast.LENGTH_SHORT);
                 } else {
                     getResultsFromApi();
                 }
@@ -334,6 +326,7 @@ public class MyEventsActivity extends AppCompatActivity implements EasyPermissio
         Log.d(TAG, "onConnectionFailed:" + connectionResult);
     }
 
+
     private class MakeRequestTask extends AsyncTask<Void, Void, List<String>> {
         private com.google.api.services.calendar.Calendar mService = null;
         private Exception mLastError = null;
@@ -359,7 +352,7 @@ public class MyEventsActivity extends AppCompatActivity implements EasyPermissio
         }
 
         private List<String> getDataFromApi() throws IOException {
-            // List the next 10 events from the primary calendar.
+
             DateTime now = new DateTime(System.currentTimeMillis());
             List<String> eventStrings = new ArrayList<String>();
 
@@ -427,17 +420,15 @@ public class MyEventsActivity extends AppCompatActivity implements EasyPermissio
         @Override
         protected void onPreExecute() {
 
-            mProgress.show();
-
+            progressLoading.setVisibility(View.VISIBLE);
+            fabUpdateEvents.setEnabled(false);
         }
 
         @Override
         protected void onPostExecute(List<String> output) {
-            mProgress.hide();
 
 
             dbEvents = db.getAllEvents();
-
             myEvents.addAll(dbEvents);
             eventsAdapter.notifyDataSetChanged();
             if (!mSettings.contains("loaded")) {
@@ -445,17 +436,14 @@ public class MyEventsActivity extends AppCompatActivity implements EasyPermissio
                 editor.putBoolean("loaded", true);
                 editor.apply();
             }
+            progressLoading.setVisibility(View.GONE);
+            fabUpdateEvents.setEnabled(true);
 
-            /*
-            for (int i = 0; i < myEvents.size(); i++) {
-                Log.i("myevent location ", myEvents.get(i).getLocation() + "");
-            }
-            */
         }
 
         @Override
         protected void onCancelled() {
-            mProgress.hide();
+            progressLoading.setVisibility(View.GONE);
             if (mLastError != null) {
                 if (mLastError instanceof GooglePlayServicesAvailabilityIOException) {
                     showGooglePlayServicesAvailabilityErrorDialog(
@@ -501,17 +489,7 @@ public class MyEventsActivity extends AppCompatActivity implements EasyPermissio
                 });
     }
 
-    private void revokeAccess() {
-        Auth.GoogleSignInApi.revokeAccess(mGoogleApiClient).setResultCallback(
-                new ResultCallback<Status>() {
-                    @Override
-                    public void onResult(Status status) {
-                        // [START_EXCLUDE]
-                        //updateUI(false);
-                        // [END_EXCLUDE]
-                    }
-                });
-    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -537,7 +515,7 @@ public class MyEventsActivity extends AppCompatActivity implements EasyPermissio
                         })
                         .setNegativeButton("نه", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
-                                // do nothing
+                               dialog.dismiss();
                             }
                         })
                         .setIcon(R.drawable.ic_signout_red)

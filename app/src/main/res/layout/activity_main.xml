@@ -171,7 +171,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:clickable="true"
-        app:backgroundTint="@color/colorAccent"
+        app:backgroundTint="@color/whiteSnow"
         app:layout_anchor="@+id/appbar"
         app:layout_anchorGravity="bottom|right|end"
         app:srcCompat="@drawable/ic_google_search" />

@@ -12,10 +12,6 @@ import com.mohammadreza.salari.shcalandar.Model.MyEvent;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by MohammadReza on 11/23/2016.
- */
-
 public class DatabaseHandler extends SQLiteOpenHelper {
 
     // All Static variables
@@ -25,10 +21,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     // Database Name
     private static final String DATABASE_NAME = "shcalandar";
 
-    // Contacts table name
+
     private static final String TABLE_EVENTS = "events";
 
-    // Contacts Table Columns names
     private static final
 
     String KEY_ID = "id";
@@ -76,7 +71,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     public void addEvent(MyEvent event) {
         SQLiteDatabase db = this.getWritableDatabase();
-
         ContentValues values = new ContentValues();
         values.put(KEY_ID, event.getId());
         values.put(KEY_SUMMARY, event.getSummary());

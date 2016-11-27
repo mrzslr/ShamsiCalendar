@@ -8,9 +8,7 @@ import android.widget.TextView;
 import com.mohammadreza.salari.shcalandar.Application.MyApplication;
 
 
-/**
- * Created by MohammadReza on 24/06/2016.
- */
+
 public class MyTextViewBold extends TextView {
     public MyTextViewBold(Context context) {
         super(context);

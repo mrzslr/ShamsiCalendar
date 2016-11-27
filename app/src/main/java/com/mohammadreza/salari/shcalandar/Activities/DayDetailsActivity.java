@@ -11,10 +11,6 @@ import com.mohammadreza.salari.shcalandar.R;
 import com.mohammadreza.salari.shcalandar.Views.MyTextView;
 import com.mohammadreza.salari.shcalandar.Views.MyTextViewBold;
 
-/**
- * Created by MohammadReza on 11/20/2016.
- */
-
 public class DayDetailsActivity extends AppCompatActivity {
 
     MyTextViewBold shamsiDate;

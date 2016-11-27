@@ -2,8 +2,8 @@
 <resources>
     <color name="colorPrimary">#186E8F</color>
     <color name="colorPrimaryDark">#0E5672</color>
-    <color name="colorAccent">#FAFAFA</color>
-
+    <color name="colorAccent">#0E5672</color>
+    <color name="whiteSnow">#FAFAFA</color>
     <color name="text_normal">#626262</color>
     <color name="text_light">#ababab</color>
     <color name="text_super_light">#c0c0c0</color>

@@ -12,7 +12,6 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.*;
-
 import com.mohammadreza.salari.shcalandar.Activities.DayDetailsActivity;
 import com.mohammadreza.salari.shcalandar.R;
 import com.mohammadreza.salari.shcalandar.Utils.PersianCalendar;

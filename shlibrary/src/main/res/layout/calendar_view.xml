@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/b_header"
+            android:orientation="horizontal"
+            android:paddingBottom="8dp">
+
+            <ImageButton
+                android:id="@+id/prev"
+                style="?android:borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:contentDescription="@string/time_prev"
+                app:srcCompat="@drawable/ic_keyboard_arrow_left_black_24dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:layout_weight="1"
+
+                android:orientation="vertical">
+
+                <com.mohammadreza.salari.shlibrary.Views.MyTextViewBold
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/main_year_text_size" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+
+                    android:orientation="horizontal">
+
+                    <com.mohammadreza.salari.shlibrary.Views.MyTextView
+                        android:id="@+id/titleUp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:textSize="@dimen/main_month_text_size"
+                        tools:ignore="SmallSp" />
+
+                    <View
+                        android:layout_width="4dp"
+                        android:layout_height="match_parent" />
+
+                    <com.mohammadreza.salari.shlibrary.Views.MyTextView
+                        android:id="@+id/titleDown"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+
+                        android:layout_weight="1"
+                        android:gravity="right"
+
+
+                        android:textSize="@dimen/main_month_text_size"
+                        tools:ignore="SmallSp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/next"
+                style="?android:borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:contentDescription="@string/time_next"
+                app:srcCompat="@drawable/ic_keyboard_arrow_right_black_24dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/selection_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/blue_dark"
+            android:gravity="center"
+            android:minHeight="48dp"
+            android:singleLine="true"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:visibility="gone" />
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/days"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/week_days_background"
+        android:orientation="horizontal">
+
+        <com.mohammadreza.salari.shlibrary.Views.MyTextViewBold
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="ج"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/day_text_size" />
+
+        <com.mohammadreza.salari.shlibrary.Views.MyTextViewBold
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="پ"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/day_text_size" />
+
+        <com.mohammadreza.salari.shlibrary.Views.MyTextViewBold
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="چ"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/day_text_size" />
+
+        <com.mohammadreza.salari.shlibrary.Views.MyTextViewBold
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="س"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/day_text_size" />
+
+        <com.mohammadreza.salari.shlibrary.Views.MyTextViewBold
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="د"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/day_text_size" />
+
+        <com.mohammadreza.salari.shlibrary.Views.MyTextViewBold
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="ی"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/day_text_size" />
+
+        <com.mohammadreza.salari.shlibrary.Views.MyTextViewBold
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="ش"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/day_text_size" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/weeks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:orientation="vertical">
+
+        <include layout="@layout/week_layout" />
+
+        <include layout="@layout/week_layout" />
+
+        <include layout="@layout/week_layout" />
+
+        <include layout="@layout/week_layout" />
+
+        <include layout="@layout/week_layout" />
+
+        <include layout="@layout/week_layout" />
+
+        <View
+
+            android:layout_width="match_parent"
+
+            android:layout_height="10dp" />
+
+    </LinearLayout>
+
+</LinearLayout>
+

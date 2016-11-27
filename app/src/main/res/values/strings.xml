@@ -2,4 +2,7 @@
     <string name="app_name">ShCalandar</string>
     <string name="time_next">ماه بعد</string>
     <string name="time_prev">ماه قبل</string>
+    <string name="google_play_unavailable">این برنامه به سرویس گوگل پلی نیاز دارد . لطفا آن را نصب کنید و برنامه را مجددا راه اندازی کنید.</string>
+    <string name="google_account_permission">این برنامه به دسترسی اکانت های گوگل نیاز دارد(از طریق مخاطبین).</string>
+    <string name="internet_disconnect">اتصال با اینترنت قطع می باشد...</string>
 </resources>

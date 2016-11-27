@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XCalendarEvents Version="1.0.0">
+  <Event Title="آغاز سال جدید هجري قمري" FormatTitle="1" XCalendar="ObservedHijriCalendar" Day="1" Month="1"/>
+  <Event Title="تاسوعاي حسيني" IsVacation="1" XCalendar="ObservedHijriCalendar" Day="9" Month="1"/>
+  <Event Title="عاشوراي حسيني" IsVacation="1" XCalendar="ObservedHijriCalendar" Day="10" Month="1"/>
+  <Event Title="روز تجليل از اسرا و مفقودان" XCalendar="ObservedHijriCalendar" Day="11" Month="1"/>
+  <Event Title="شهادت حضرت امام زين العابدين عليه السلام، 95 هـ ق" XCalendar="ObservedHijriCalendar" Day="12" Month="1"/>
+  <Event Title="تغيير قبلة مسلمين از بيت المقدس به مكة معظمه، 2 هـ ق" XCalendar="ObservedHijriCalendar" Day="18" Month="1"/>
+  <Event Title="شهادت حضرت امام زين العابدين عليه السلام، 95 هـ ق، به روايتي " XCalendar="ObservedHijriCalendar" Day="25" Month="1"/>
+  <Event Title="ولادت حضرت امام محمد باقر عليه السلام، 57 هـ ق" XCalendar="ObservedHijriCalendar" Day="3" Month="2"/>
+  <Event Title="ولادت حضرت امام موسي كاظم عليه السلام، 128 هـ ق" XCalendar="ObservedHijriCalendar" Day="7" Month="2"/>
+  <Event Title="اربعين حسيني" IsVacation="1" XCalendar="ObservedHijriCalendar" Day="20" Month="2"/>
+  <Event Title="روز وقف" XCalendar="ObservedHijriCalendar" Day="27" Month="2"/>
+  <Event Title="رحلت حضرت رسول اكرم صلي الله عليه و آله، 11 هـ ق - شهادت حضرت امام حسن مجتبي عليه السلام، 50 هـ ق" IsVacation="1" XCalendar="ObservedHijriCalendar" Day="28" Month="2"/>
+  <Event Title="شهادت حضرت امام رضا عليه السلام، 203 هـ ق" IsVacation="1" XCalendar="ObservedHijriCalendar" Day="30" Month="2"/>
+  <Event Title="هجرت حضرت رسول اكرم صلي الله عليه و آله از مكه به مدينه، اول محرم سال هجرت، مبدأ گاه شماري هجري قمري" XCalendar="ObservedHijriCalendar" Day="1" Month="3"/>
+  <Event Title="شهادت حضرت امام حسن عسكري عليه السلام، 260 هـ ق" XCalendar="ObservedHijriCalendar" Day="8" Month="3"/>
+  <Event Title="ميلاد حضرت رسول اكرم صلي الله عليه و آله به روايت اهل سنت - آغاز هفتة وحدت" XCalendar="ObservedHijriCalendar" Day="12" Month="3"/>
+  <Event Title="ميلاد حضرت رسول اكرم صلي الله عليه و آله، 53 سال قبل از هجرت، روز اخلاق و مهرورزي - ميلاد حضرت امام جعفر صادق عليه‌السلام مؤسس مذهب جعفري، 83 هـ ق" IsVacation="1" XCalendar="ObservedHijriCalendar" Day="17" Month="3"/>
+  <Event Title="ولادت حضرت امام حسن عسكري عليه السلام، 232 هـ ق" XCalendar="ObservedHijriCalendar" Day="8" Month="4"/>
+  <Event Title="وفات حضرت معصومه سلام الله عليها، 201 هـ ق" XCalendar="ObservedHijriCalendar" Day="10" Month="4"/>
+  <Event Title="ولادت حضرت زينب سلام‌الله عليها، 5 هـ ق،  روز پرستار و بهورز" XCalendar="ObservedHijriCalendar" Day="5" Month="5"/>
+  <Event Title="شهادت حضرت فاطمه زهرا سلام الله عليها، 11 هـ ق، به روايتي" XCalendar="ObservedHijriCalendar" Day="13" Month="5"/>
+  <Event Title="شهادت حضرت فاطمة زهرا سلام الله عليها، 11 هـ ق" IsVacation="1" XCalendar="ObservedHijriCalendar" Day="3" Month="6"/>
+  <Event Title="ولادت حضرت فاطمة زهرا سلام الله عليها، هشتم قبل از هجرت،  روز زن" XCalendar="ObservedHijriCalendar" Day="20" Month="6"/>
+  <Event Title="ولادت حضرت امام محمد باقر عليه‌السلام، 57 هـ ق" XCalendar="ObservedHijriCalendar" Day="1" Month="7"/>
+  <Event Title="شهادت حضرت امام علي النقي الهادي عليه السلام، 254 هـ ق" XCalendar="ObservedHijriCalendar" Day="3" Month="7"/>
+  <Event Title="ولادت حضرت امام محمد تقي عليه السلام «جواد الائمه»، 195 هـ ق" XCalendar="ObservedHijriCalendar" Day="10" Month="7"/>
+  <Event Title="ولادت حضرت امام علي عليه السلام، 23 سال قبل از هجرت" IsVacation="1" XCalendar="ObservedHijriCalendar" Day="13" Month="7"/>
+  <Event Title="آغاز ايام البيض، اعتكاف" XCalendar="ObservedHijriCalendar" Day="13" Month="7"/>
+  <Event Title="وفات حضرت زينب سلام الله عليها، 62 هـ ق" XCalendar="ObservedHijriCalendar" Day="15" Month="7"/>
+  <Event Title="شهادت حضرت امام موسي كاظم عليه السلام، 183 هـ ق" XCalendar="ObservedHijriCalendar" Day="25" Month="7"/>
+  <Event Title="مبعث حضرت رسول اكرم صلي الله عليه و آله، 13 سال قبل از هجرت" IsVacation="1" XCalendar="ObservedHijriCalendar" Day="27" Month="7"/>
+  <Event Title="ولادت حضرت امام حسين عليه السلام، 4 هـ ق، روز پاسدار" XCalendar="ObservedHijriCalendar" Day="3" Month="8"/>
+  <Event Title="ولادت حضرت ابوالفضل العباس عليه السلام، 26 هـ ق، روز جانباز" XCalendar="ObservedHijriCalendar" Day="4" Month="8"/>
+  <Event Title="ولادت حضرت امام زين العابدين عليه السلام، 38 هـ ق" XCalendar="ObservedHijriCalendar" Day="5" Month="8"/>
+  <Event Title="ولادت حضرت علي اكبر عليه السلام، 33 هـ ق، روز جوان" XCalendar="ObservedHijriCalendar" Day="11" Month="8"/>
+  <Event Title=" ولادت حضرت قائم عجل الله تعالي فرجه، 255 هـ ق و روز جهانی مستضعفان" IsVacation="1" XCalendar="ObservedHijriCalendar" Day="15" Month="8"/>
+ 
+  <Event Title="وفات حضرت خديجه سلام الله عليها، 3 سال قبل از هجرت" XCalendar="ObservedHijriCalendar" Day="10" Month="9"/>
+  <Event Title="ولادت حضرت امام حسن مجتبي عليه‌السلام، 3 هـ ق، روز اكرام" XCalendar="ObservedHijriCalendar" Day="15" Month="9"/>
+  <Event Title="شب قدر" XCalendar="ObservedHijriCalendar" Day="18" Month="9"/>
+  <Event Title="ضربت خوردن حضرت علي عليه السلام، 40 هـ ق" XCalendar="ObservedHijriCalendar" Day="19" Month="9"/>
+  <Event Title="شب قدر" XCalendar="ObservedHijriCalendar" Day="20" Month="9"/>
+  <Event Title="شهادت حضرت علي عليه السلام، 40 هـ ق" IsVacation="1" XCalendar="ObservedHijriCalendar" Day="21" Month="9"/>
+  <Event Title="شب قدر" XCalendar="ObservedHijriCalendar" Day="22" Month="9"/>
+  <Event Title="روز جهاني قدس (آخرين جمعه ماه رمضان)" XCalendar="ObservedHijriCalendar" RuleType="1" Month="9" DayOfWeek="6" Nth="-1"/>
+  <Event Title="عيد سعيد فطر" IsVacation="1" XCalendar="ObservedHijriCalendar" Day="1" Month="10"/>
+<Event Title="تعطیل به مناسبت عید سعید فطر" IsVacation="1" XCalendar="ObservedHijriCalendar" Day="2" Month="10"/>
+  <Event Title="شهادت حضرت امام جعفر صادق عليه السلام، 148 هـ ق" IsVacation="1" XCalendar="ObservedHijriCalendar" Day="25" Month="10"/>
+  <Event Title="ولادت حضرت معصومه سلام الله عليها، 173 هـ ق، روز ملي دختران" XCalendar="ObservedHijriCalendar" Day="1" Month="11"/>
+  <Event Title="ولادت حضرت امام رضا عليه السلام، 148 هـ ق" XCalendar="ObservedHijriCalendar" Day="11" Month="11"/>
+  <Event Title="شهادت حضرت امام محمد تقي عليه السلام «جوادالائمه»، 220 هـ ق" XCalendar="ObservedHijriCalendar" Day="29" Month="11"/>
+  <Event Title="سالروز ازدواج حضرت علي عليه السلام و حضرت فاطمه سلام الله عليها، 2 هـ ق" XCalendar="ObservedHijriCalendar" Day="1" Month="12"/>
+  <Event Title="شهادت مظلومانه زائران خانه خدا به دستور آمريكا به دست مأموران آل سعود، 1366 هـ ش ـ برابر با 6 ذي الحجه 1407 هـ ق" XCalendar="ObservedHijriCalendar" Day="6" Month="12"/>
+  <Event Title="شهادت حضرت امام محمد باقر عليه السلام، 114 هـ ق" XCalendar="ObservedHijriCalendar" Day="7" Month="12"/>
+  <Event Title="روز عرفه - روز نيايش" XCalendar="ObservedHijriCalendar" Day="9" Month="12"/>
+  <Event Title="عيد سعيد قربان" IsVacation="1" XCalendar="ObservedHijriCalendar" Day="10" Month="12"/>
+  <Event Title="ولادت حضرت امام علي النقي الهادي عليه‌السلام، 212 هـ ق" XCalendar="ObservedHijriCalendar" Day="15" Month="12"/>
+  <Event Title="عيد سعيد غديرخم، 10 هـ ق" IsVacation="1" XCalendar="ObservedHijriCalendar" Day="18" Month="12"/>
+  <Event Title="روز مباهله پيامبر اسلام صلي الله عليه و آله، 10 هـ ق" XCalendar="ObservedHijriCalendar" Day="24" Month="12"/>
+  <Event Title="روز خانواده و تكريم بازنشستگان" XCalendar="ObservedHijriCalendar" Day="25" Month="12"/>
+</XCalendarEvents>

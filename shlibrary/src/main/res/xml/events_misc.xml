@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XCalendarEvents Version="1.0.0">
+  <Event Title="روز جهاني آب" XCalendar="GregorianCalendar" Day="22" Month="3"/>
+  <Event Title="روز جهاني هواشناسي" XCalendar="GregorianCalendar" Day="23" Month="3"/>
+  <Event Title="همه پرسي تغيير نظام شاهنشاهي به نظام جمهوري اسلامي ايران، 1358 هـ‌.ش" XCalendar="PersianCalendar" Day="10" Month="1"/>
+  <Event Title="قطع مناسبات سياسي ايران و آمريكا، 1359 هـ‌.ش" XCalendar="PersianCalendar" Day="20" Month="1"/>
+  <Event Title="تأسيس بنياد مسكن انقلاب اسلامي و افتتاح حساب شمارة 100 به فرمان حضرت امام خميني -ره-، 1358 هـ‌.ش" XCalendar="PersianCalendar" Day="21" Month="1"/>
+  <Event Title="روز جهاني ماما" XCalendar="GregorianCalendar" Day="5" Month="5"/>
+  <Event Title="آغاز محاصرة اقتصادي جمهوري اسلامي ايران توسط آمريكا، 1359 هـ ش" XCalendar="PersianCalendar" Day="1" Month="3"/>
+  <Event Title="افتتاح اولين دوره مجلس شوراي اسلامي، 1359 هـ ش" XCalendar="PersianCalendar" Day="7" Month="3"/>
+  <Event Title="روز جهاني بدون دخانيات" XCalendar="GregorianCalendar" Day="31" Month="5"/>
+  <Event Title="زنداني شدن حضرت امام خميني -ره- به دست مأموران ستم شاهي پهلوي، 1342 هـ ش" XCalendar="PersianCalendar" Day="15" Month="3"/>
+  <Event Title="روز بزرگداشت علامه اميني، 1349 هـ ش" XCalendar="PersianCalendar" Day="12" Month="4"/>
+  <Event Title="كشف توطئة كودتاي آمريكايي در پايگاه هوايي شهيد نوژه، 1359 هـ ش" XCalendar="PersianCalendar" Day="21" Month="4"/>
+  <Event Title="گشايش نخستين مجلس خبرگان رهبري، 1362 هـ ش" XCalendar="PersianCalendar" Day="23" Month="4"/>
+  <Event Title="روز جهاني شير مادر " XCalendar="GregorianCalendar" Day="1" Month="8"/>
+  <Event Title="شهادت آيت الله شيخ فضل الله نوري، 1288 هـ ش" XCalendar="PersianCalendar" Day="11" Month="5"/>
+  <Event Title="انفجار بمب اتمي آمريكا در هيروشيما با بيش از 160 هزار كشته و مجروح، 1945 ميلادي" XCalendar="PersianCalendar" Day="15" Month="5"/>
+  <Event Title="گشايش مجلس خبرگان براي بررسي نهايي قانون اساسي جمهوري اسلامي ايران، 1358 هـ ش" XCalendar="PersianCalendar" Day="28" Month="5"/>
+  <Event Title="حمله به مسجد گوهرشاد و كشتار مردم توسط رضاخان، 1314 هـ ش" XCalendar="PersianCalendar" Day="30" Month="5"/>
+  <Event Title="اشغال ايران به توسط متفقين و فرار رضاخان، 1320 هـ ش" XCalendar="PersianCalendar" Day="3" Month="6"/>
+  <Event Title="روز جهاني دريانوردي" XCalendar="GregorianCalendar" Day="30" Month="9"/>
+  <Event Title="روز جهاني پست " XCalendar="GregorianCalendar" Day="9" Month="10"/>
+  <Event Title="روز جهاني غذا " XCalendar="GregorianCalendar" Day="16" Month="10"/>
+  <Event Title="شهادت مظلومانة آيت الله حاج سيد مصطفي خميني، 1356 هـ ش" XCalendar="PersianCalendar" Day="1" Month="8"/>
+  <Event Title="تبعيد حضرت امام خميني -ره- از ايران به تركيه، 1343 هـ ش" XCalendar="PersianCalendar" Day="13" Month="8"/>
+  <Event Title="شهادت سيد علي اندرزگو به دست مأموران ستم‌شاهي پهلوي، 1357 هـ ش" XCalendar="PersianCalendar" Day="22" Month="8"/>
+  <Event Title="روز جهاني مبارزه با ايدز" XCalendar="GregorianCalendar" Day="1" Month="12"/>
+  <Event Title="شهادت ميرزا كوچك خان جنگلي، 1300 هـ ش" XCalendar="PersianCalendar" Day="11" Month="9"/>
+  <Event Title="روز جهاني هواپيمايي" XCalendar="GregorianCalendar" Day="7" Month="12"/>
+  <Event Title="روز تجليل از شهيد تندگويان" XCalendar="PersianCalendar" Day="25" Month="9"/>
+  <Event Title="ابلاغ پيام تاريخي حضرت امام خميني -ره- به گورباچف رهبر شوروي سابق، 1367 هـ ش" XCalendar="PersianCalendar" Day="13" Month="10"/>
+  <Event Title="اجراي طرح استعماري حذف حجاب توسط رضاخان، 1314 هـ ش" XCalendar="PersianCalendar" Day="17" Month="10"/>
+  <Event Title="انتخابات اولين دورة رياست جمهوري اسلامي ايران، 1358 هـ ش" XCalendar="PersianCalendar" Day="5" Month="11"/>
+  <Event Title="شكسته شدن حكومت نظامي به فرمان حضرت امام خميني -ره-، 1357 هـ ش" XCalendar="PersianCalendar" Day="21" Month="11"/>
+  <Event Title="صدور حكم تاريخي حضرت امام خميني -ره- مبني بر ارتداد سلمان رشدي نويسندة خائن كتاب آيات شيطاني، 1367 هـ ش" XCalendar="PersianCalendar" Day="25" Month="11"/>
+  <Event Title="كودتاي انگليسي رضاخان، 1299 هـ ش" XCalendar="PersianCalendar" Day="3" Month="12"/>
+  <Event Title="برگزاري انتخابات اولين دورة مجلس شوراي اسلامي، 1358 هـ ش" XCalendar="PersianCalendar" Day="24" Month="12"/>
+  <Event Title="فتح اندلس به دست مسلمانان، 92 هـ ق" XCalendar="ObservedHijriCalendar" Day="21" Month="10"/>
+</XCalendarEvents>

@@ -1,7 +1,6 @@
 package com.mohammadreza.salari.shcalandar.Calendar;
 
 import android.content.Context;
-import android.media.Image;
 import android.util.AttributeSet;
 import android.widget.TextView;
 import android.widget.*;

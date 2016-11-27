@@ -2,25 +2,18 @@ package com.mohammadreza.salari.shcalandar.Activities;
 
 
 import android.app.ProgressDialog;
-
 import android.net.Uri;
 import android.os.*;
-
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
-
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.*;
-
 import java.text.*;
-
 import android.content.*;
-
-
 import com.bumptech.glide.Glide;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -28,8 +21,6 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.common.api.ResultCallback;
-import com.google.android.gms.common.api.Status;
 import com.mohammadreza.salari.shcalandar.Application.MyApplication;
 import com.mohammadreza.salari.shcalandar.Calendar.PersianDatePicker;
 import com.mohammadreza.salari.shcalandar.R;
@@ -60,7 +51,6 @@ public class MainActivity extends AppCompatActivity implements PersianDatePicker
         // TODO: Implement this method
         super.onCreate(savedInstanceState);
         app = (MyApplication) getApplicationContext();
-        // setStatusBarTranslucent(true);
         setContentView(R.layout.activity_main);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -78,6 +68,7 @@ public class MainActivity extends AppCompatActivity implements PersianDatePicker
 
         txtToolbarTitle.setText(pCalendar.getPersianWeekDayName() + "  -  " + pCalendar.getPersianDay()
                 + " / " + pCalendar.getPersianMonth() + " / " + pCalendar.getPersianYear());
+
         final CollapsingToolbarLayout clpJobDetails = (CollapsingToolbarLayout) findViewById(R.id.collapseToolbarJobDetails);
         AppBarLayout appBarLayout = (AppBarLayout) findViewById(R.id.appbar);
         appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
@@ -90,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements PersianDatePicker
                     scrollRange = appBarLayout.getTotalScrollRange();
                 }
                 if (scrollRange + verticalOffset == 0) {
-                    //  clpJobDetails.setTitle("عنوان");
+
                     txtToolbarTitle.setVisibility(View.VISIBLE);
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR1) {
                         txtToolbarTitle.animate()
@@ -101,7 +92,7 @@ public class MainActivity extends AppCompatActivity implements PersianDatePicker
 
                     isShow = true;
                 } else if (isShow) {
-                    // clpJobDetails.setTitle("");
+
                     txtToolbarTitle.setVisibility(View.INVISIBLE);
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR1) {
                         txtToolbarTitle.animate()
@@ -141,7 +132,7 @@ public class MainActivity extends AppCompatActivity implements PersianDatePicker
         txtTodayEvent = (MyTextView) findViewById(R.id.txtTodayEvent);
 
 
-        //showCalendar(pCalendar);
+
 
         if (month <= 3) {
             //spring
@@ -204,7 +195,7 @@ public class MainActivity extends AppCompatActivity implements PersianDatePicker
             String personName = acct.getDisplayName();
             Uri personPhotoUrl = acct.getPhotoUrl();
             String email = acct.getEmail();
-            //Glide.with(GoogleCalendarActivity.this).load(personPhotoUrl).into(imgProfilePic);
+
             try {
                 mSettings = getSharedPreferences("googleAccount", 0);
                 SharedPreferences.Editor editor = mSettings.edit();
@@ -218,34 +209,10 @@ public class MainActivity extends AppCompatActivity implements PersianDatePicker
             startActivity(new Intent(MainActivity.this, MyEventsActivity.class));
         } else {
             // Signed out, show unauthenticated UI.
-            //updateUI(false);
+
         }
     }
 
-
-    private void signOut() {
-        Auth.GoogleSignInApi.signOut(mGoogleApiClient).setResultCallback(
-                new ResultCallback<Status>() {
-                    @Override
-                    public void onResult(Status status) {
-                        // [START_EXCLUDE]
-                        // updateUI(false);
-                        // [END_EXCLUDE]
-                    }
-                });
-    }
-
-    private void revokeAccess() {
-        Auth.GoogleSignInApi.revokeAccess(mGoogleApiClient).setResultCallback(
-                new ResultCallback<Status>() {
-                    @Override
-                    public void onResult(Status status) {
-                        // [START_EXCLUDE]
-                        //updateUI(false);
-                        // [END_EXCLUDE]
-                    }
-                });
-    }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -314,13 +281,5 @@ public class MainActivity extends AppCompatActivity implements PersianDatePicker
     }
     */
     //------------- -------------//
-/*
-    protected void setStatusBarTranslucent(boolean makeTranslucent) {
-        if (makeTranslucent) {
-            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        } else {
-            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        }
-    }
-*/
+
 }

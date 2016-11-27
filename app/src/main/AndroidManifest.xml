@@ -12,14 +12,15 @@
 
 
     <application
-        android:name=".Application.MyApplication"
+        android:name="com.mohammadreza.salari.shcalandar.Application.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".Activities.MainActivity"
+            android:name="com.mohammadreza.salari.shcalandar.Activities.MainActivity"
+            android:screenOrientation="portrait"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,15 +29,18 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Activities.DayDetailsActivity"
+            android:name="com.mohammadreza.salari.shcalandar.Activities.DayDetailsActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.Transparent"></activity>
-
-        <activity android:name=".Activities.MyEventsActivity">
+            android:theme="@style/Theme.Transparent">
 
         </activity>
 
-        <receiver android:name=".Widget.MediumWidgetProvider">
+        <activity
+            android:name="com.mohammadreza.salari.shcalandar.Activities.MyEventsActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <receiver android:name="com.mohammadreza.salari.shcalandar.Widget.MediumWidgetProvider">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>

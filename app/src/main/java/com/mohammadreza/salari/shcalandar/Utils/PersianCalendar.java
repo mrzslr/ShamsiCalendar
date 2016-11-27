@@ -4,7 +4,6 @@ package com.mohammadreza.salari.shcalandar.Utils;
 import java.util.GregorianCalendar;
 import java.util.TimeZone;
 import java.util.*;
-import android.util.*;
 import java.text.*;
 import android.content.*;
 

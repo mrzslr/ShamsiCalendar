@@ -1,12 +1,8 @@
 package com.mohammadreza.salari.shcalandar.Model;
 
-import android.support.annotation.Nullable;
 
-import com.google.api.services.calendar.model.EventDateTime;
 
-/**
- * Created by MohammadReza on 11/23/2016.
- */
+
 
 public class MyEvent {
     private

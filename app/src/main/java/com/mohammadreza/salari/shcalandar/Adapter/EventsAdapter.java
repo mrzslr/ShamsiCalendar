@@ -19,9 +19,6 @@ import com.mohammadreza.salari.shcalandar.Views.MyTextViewBold;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * Created by MohammadReza on 11/23/2016.
- */
 
 public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewHolder> {
 
@@ -63,16 +60,6 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewH
         holder.txtSummary.setText(myEvent.getSummary());
         holder.txtLocation.setText(myEvent.getLocation());
 
-        // loading MyEvent cover using Glide library
-        //Glide.with(mContext).load(MyEvent.getThumbnail()).into(holder.thumbnail);
-/*
-        holder.overflow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                showPopupMenu(holder.overflow);
-            }
-        });
-        */
         try {
             if (myEvent.getStart() == null) {
                 holder.txtDay.setText("--");

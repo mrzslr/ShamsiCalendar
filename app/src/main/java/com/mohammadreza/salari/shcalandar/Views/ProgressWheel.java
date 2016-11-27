@@ -20,9 +20,7 @@ import android.view.View;
 import com.mohammadreza.salari.shcalandar.R;
 
 
-/**
- * Created by MohammadReza on 7/29/2016.
- */
+
 public class ProgressWheel extends View {
     private static final String TAG = ProgressWheel.class.getSimpleName();
     private final int barLength = 16;

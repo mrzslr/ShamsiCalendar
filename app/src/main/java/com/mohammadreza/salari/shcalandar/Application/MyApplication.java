@@ -1,11 +1,8 @@
 package com.mohammadreza.salari.shcalandar.Application;
 
 import android.app.*;
-
 import android.content.*;
-
 import com.mohammadreza.salari.shcalandar.Utils.PersianCalendar;
-
 import java.io.*;
 import java.util.*;
 
