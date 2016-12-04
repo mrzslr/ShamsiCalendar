@@ -9,8 +9,9 @@ It's just a Persian Calendar Android application source code based on Google Mat
 
 ----------
 To use library 
-'''
+```
 compile project(":shlibrary")
-'''
+
+```
 ![ScreenShot](https://raw.github.com/mohammadreza2012/ShamsiCalendar/master/preview.jpg)
 
