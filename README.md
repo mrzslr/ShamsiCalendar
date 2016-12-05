@@ -9,5 +9,8 @@ It's just a Persian Calendar Android application source code based on Google Mat
 
 ----------
 
+## Download APK
+![File](https://raw.github.com/mohammadreza2012/ShamsiCalendar/master/ShCalandar-v1.0.apk)
+
 ![ScreenShot](https://raw.github.com/mohammadreza2012/ShamsiCalendar/master/preview.jpg)
 
