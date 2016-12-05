@@ -8,10 +8,6 @@ It's just a Persian Calendar Android application source code based on Google Mat
  - Using Google Calendar API to get Your Events.
 
 ----------
-To use library 
-```
-compile project(":shlibrary")
 
-```
 ![ScreenShot](https://raw.github.com/mohammadreza2012/ShamsiCalendar/master/preview.jpg)
 
