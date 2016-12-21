@@ -282,4 +282,10 @@ public class MainActivity extends AppCompatActivity implements PersianDatePicker
     */
     //------------- -------------//
 
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        persianDatePicker.refresh();
+    }
 }

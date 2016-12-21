@@ -26,6 +26,7 @@ import com.mohammadreza.salari.shcalandar.Model.MyEvent;
 import com.mohammadreza.salari.shcalandar.R;
 import com.mohammadreza.salari.shcalandar.Views.MyTextViewBold;
 import com.mohammadreza.salari.shcalandar.Views.ProgressWheel;
+
 import android.Manifest;
 import android.accounts.AccountManager;
 import android.app.Dialog;
@@ -51,15 +52,16 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
+
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+
 import pub.devrel.easypermissions.AfterPermissionGranted;
 import pub.devrel.easypermissions.EasyPermissions;
-
 
 
 public class MyEventsActivity extends AppCompatActivity implements EasyPermissions.PermissionCallbacks, GoogleApiClient.OnConnectionFailedListener {
@@ -327,7 +329,7 @@ public class MyEventsActivity extends AppCompatActivity implements EasyPermissio
     }
 
 
-    private class MakeRequestTask extends AsyncTask<Void, Void, List<String>> {
+    private class MakeRequestTask extends AsyncTask<Void, Void, Void> {
         private com.google.api.services.calendar.Calendar mService = null;
         private Exception mLastError = null;
 
@@ -341,19 +343,20 @@ public class MyEventsActivity extends AppCompatActivity implements EasyPermissio
         }
 
         @Override
-        protected List<String> doInBackground(Void... params) {
+        protected Void doInBackground(Void... params) {
             try {
-                return getDataFromApi();
+                getDataFromApi();
             } catch (Exception e) {
                 mLastError = e;
                 cancel(true);
-                return null;
+
             }
+            return null;
         }
 
-        private List<String> getDataFromApi() throws IOException {
+        private void getDataFromApi() throws IOException {
 
-            DateTime now = new DateTime(System.currentTimeMillis());
+            // DateTime now = new DateTime(System.currentTimeMillis());
             List<String> eventStrings = new ArrayList<String>();
 
             Events events = mService.events().list("primary")
@@ -363,6 +366,7 @@ public class MyEventsActivity extends AppCompatActivity implements EasyPermissio
                     .setSingleEvents(true)
                     .execute();
             List<Event> items = events.getItems();
+
             for (Event event : items) {
                 //DateTime start = event.getStart().getDateTime();
                 MyEvent myEvent = new MyEvent();
@@ -408,13 +412,13 @@ public class MyEventsActivity extends AppCompatActivity implements EasyPermissio
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+                eventStrings.add(event.getId());
 
 
                 db.addEvent(myEvent);
             }
 
 
-            return eventStrings;
         }
 
         @Override
@@ -425,12 +429,14 @@ public class MyEventsActivity extends AppCompatActivity implements EasyPermissio
         }
 
         @Override
-        protected void onPostExecute(List<String> output) {
-
+        protected void onPostExecute(Void output) {
 
             dbEvents = db.getAllEvents();
             myEvents.addAll(dbEvents);
             eventsAdapter.notifyDataSetChanged();
+            if (myEvents.size() == 0) {
+                Toast.makeText(MyEventsActivity.this, getResources().getString(R.string.no_events), Toast.LENGTH_SHORT).show();
+            }
             if (!mSettings.contains("loaded")) {
                 SharedPreferences.Editor editor = mSettings.edit();
                 editor.putBoolean("loaded", true);
@@ -490,7 +496,6 @@ public class MyEventsActivity extends AppCompatActivity implements EasyPermissio
     }
 
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
@@ -506,16 +511,17 @@ public class MyEventsActivity extends AppCompatActivity implements EasyPermissio
         switch (item.getItemId()) {
             case R.id.action_signout:
                 new AlertDialog.Builder(MyEventsActivity.this)
-                        .setTitle("خروج از حساب کاربری")
-                        .setMessage("میخوای از حساب کاربریت خارج بشی؟")
-                        .setPositiveButton("آره", new DialogInterface.OnClickListener() {
+                        .setTitle(getResources().getString(R.string.account_signout_title))
+                        .setMessage(getResources().getString(R.string.account_signout_content))
+                        .setPositiveButton(getResources().getString(R.string.yes
+                        ), new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
                                 signOut();
                             }
                         })
-                        .setNegativeButton("نه", new DialogInterface.OnClickListener() {
+                        .setNegativeButton(getResources().getString(R.string.no), new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
-                               dialog.dismiss();
+                                dialog.dismiss();
                             }
                         })
                         .setIcon(R.drawable.ic_signout_red)

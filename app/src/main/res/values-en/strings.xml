@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Shamsi Calendar</string>
+    <string name="time_next">Next Month</string>
+    <string name="time_prev">Previous Month</string>
+    <string name="google_play_unavailable">This application need google play services. please install and run the application again.</string>
+    <string name="google_account_permission">This application need access to google accounts(by Contacts).</string>
+    <string name="internet_disconnect">Oops... Connection is not fine.</string>
+    <string name="account_signout_title">Sign Out</string>
+    <string name="account_signout_content">Do you wanna sign out your account?</string>
+    <string name="yes">YES</string>
+    <string name="no">NO</string>
+    <string name="no_events">There is no Event !</string>
+
+</resources>

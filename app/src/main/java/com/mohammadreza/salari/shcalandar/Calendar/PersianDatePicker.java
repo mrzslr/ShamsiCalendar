@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.*;
+
 import com.mohammadreza.salari.shcalandar.Activities.DayDetailsActivity;
 import com.mohammadreza.salari.shcalandar.R;
 import com.mohammadreza.salari.shcalandar.Utils.PersianCalendar;
@@ -257,7 +258,7 @@ public class PersianDatePicker extends LinearLayout implements View.OnClickListe
                         intent.putExtra("shamsi_date", pCalendar.getPersianLongDate());
                         intent.putExtra("miladi_date", formattedDate);
                         intent.putExtra("hejri_date", pCalendar.writeIslamicDate());
-                        intent.putExtra("shamsi_event", pCalendar.getGEvent(day)+" - "+pCalendar.getPEvent(day) + " - "+pCalendar.getHEvent(day));
+                        intent.putExtra("shamsi_event", pCalendar.getGEvent(day) + " - " + pCalendar.getPEvent(day) + " - " + pCalendar.getHEvent(day));
                         context.startActivity(intent);
 
 
@@ -392,5 +393,7 @@ public class PersianDatePicker extends LinearLayout implements View.OnClickListe
 
         void onDateChanged(PersianCalendar persianCalendar);
     }
+
+
 
 }
