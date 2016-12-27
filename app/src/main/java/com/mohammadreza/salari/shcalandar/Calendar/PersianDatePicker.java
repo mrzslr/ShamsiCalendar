@@ -1,22 +1,22 @@
 package com.mohammadreza.salari.shcalandar.Calendar;
 
 
-import java.text.SimpleDateFormat;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.*;
 
 import com.mohammadreza.salari.shcalandar.Activities.DayDetailsActivity;
 import com.mohammadreza.salari.shcalandar.R;
 import com.mohammadreza.salari.shcalandar.Utils.PersianCalendar;
 import com.mohammadreza.salari.shcalandar.Utils.PersianCalendarConstants;
+
+import java.text.SimpleDateFormat;
 
 import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 
@@ -51,8 +51,8 @@ public class PersianDatePicker extends LinearLayout implements View.OnClickListe
         mNext = (ImageButton) findViewById(R.id.next);
         mWeeksView = (LinearLayout) findViewById(R.id.weeks);
 
-        mHeader = (LinearLayout) findViewById(R.id.header);
-        mSelectionText = (TextView) findViewById(R.id.selection_title);
+      //  mHeader = (LinearLayout) findViewById(R.id.header);
+        //mSelectionText = (TextView) findViewById(R.id.selection_title);
 
         mPrev.setOnClickListener(this);
         mNext.setOnClickListener(this);
@@ -209,9 +209,9 @@ public class PersianDatePicker extends LinearLayout implements View.OnClickListe
             final DayView dayView = getDayView(wCnt, wDay);
 
 
-            dayView.setTextUp(gDay, !pCalendar.getGEvent(day).equals(""), pCalendar.getGVacation(day));
+
             dayView.setText(PersianCalendarConstants.toArabicNumbers(day), !pCalendar.getPEvent(day).equals(""), pCalendar.getPVacation(day) || wDay == 6);
-            dayView.setTextDown(hDay, !pCalendar.getHEvent(day).equals(""), pCalendar.getHVacation(day));
+
             boolean isCurrent = pCalendar.isCurrent(i),
                     isSelected =
                             pCalendar.isSelected(i);

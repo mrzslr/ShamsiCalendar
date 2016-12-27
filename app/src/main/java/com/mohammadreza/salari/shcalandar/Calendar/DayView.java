@@ -1,12 +1,12 @@
 package com.mohammadreza.salari.shcalandar.Calendar;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.text.Html;
 import android.util.AttributeSet;
-import android.widget.TextView;
-import android.widget.*;
-import android.view.*;
-import android.graphics.*;
-import android.text.*;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.LinearLayout;
 
 import com.mohammadreza.salari.shcalandar.R;
 import com.mohammadreza.salari.shcalandar.Views.MyTextView;
@@ -17,9 +17,7 @@ public class DayView extends LinearLayout {//} TextView {
     private static final int[] STATE_CURRENT = {R.attr.state_current};
 
     private boolean mCurrent, mVacation;
-    private TextView txtUp, txtDown;
     private MyTextView txtMid;
-    private ImageView imgVacation;
     LayoutInflater mInflater;
 
     public DayView(Context context) {
@@ -39,25 +37,25 @@ public class DayView extends LinearLayout {//} TextView {
 
     protected void onFinishInflate() {
         super.onFinishInflate();
-
-        txtUp = (TextView) findViewById(R.id.dayTextUp);
         txtMid = (MyTextView) findViewById(R.id.dayText);
-        txtDown = (TextView) findViewById(R.id.dayTextDown);
-        imgVacation = (ImageView) findViewById(R.id.imgVacation);
+
     }
 
     public void setCurrent(boolean current) {
         mCurrent = current;
         if (current == true)
-            setBackgroundResource(R.drawable.b_current);
+             setBackgroundResource(R.drawable.b_current);
+
         else
-            setBackgroundResource(R.drawable.b_black);
+
+        setBackgroundResource(R.drawable.b_black);
     }
 
     public void setSelected(boolean select) {
 
         if (select == true) {
             if (mCurrent == true)
+
                 setBackgroundResource(R.drawable.b_current_selected);
             else
                 setBackgroundResource(R.drawable.b_selected);
@@ -84,9 +82,9 @@ public class DayView extends LinearLayout {//} TextView {
     }
 
     public void clearText() {
-        txtUp.setText("");
+
         txtMid.setText("");
-        txtDown.setText("");
+
 
     }
 
@@ -96,38 +94,14 @@ public class DayView extends LinearLayout {//} TextView {
         else txtMid.setText(txt);
         if (isVacation == true) {
             //imgVacation.setVisibility(VISIBLE);
+//            txtMid.setTextColor(getContext().getResources().getColor(R.color.m_red));
             txtMid.setTextColor(getContext().getResources().getColor(R.color.m_red));
-           // txtMid.setTextColor(getContext().getResources().getColor(R.color.black));
+
+            // txtMid.setTextColor(getContext().getResources().getColor(R.color.black));
         } else {
             //imgVacation.setVisibility(INVISIBLE);
             txtMid.setTextColor(getContext().getResources().getColor(R.color.black));
 
-        }
-    }
-
-    public void setTextUp(String txt, boolean hasEvent, boolean isVacation) {
-        if (hasEvent) txtUp.setText(Html.fromHtml("<u>" + txt + "</u>"));
-        else
-            txtUp.setText(txt);
-        if (isVacation == true) {
-          //  imgVacation.setVisibility(VISIBLE);
-            txtUp.setTextColor(getContext().getResources().getColor(R.color.m_red));
-        } else {
-            txtUp.setTextColor(getContext().getResources().getColor(R.color.black));
-            //imgVacation.setVisibility(INVISIBLE);
-        }
-    }
-
-    public void setTextDown(String txt, boolean hasEvent, boolean isVacation) {
-        if (hasEvent) txtDown.setText(Html.fromHtml("<u>" + txt + "</u>"));
-        else
-            txtDown.setText(txt);
-        if (isVacation == true) {
-          //  imgVacation.setVisibility(VISIBLE);
-            txtDown.setTextColor(getContext().getResources().getColor(R.color.m_red));
-        } else {
-           // txtDown.setTextColor(getContext().getResources().getColor(R.color.black));
-            imgVacation.setVisibility(INVISIBLE);
         }
     }
 
