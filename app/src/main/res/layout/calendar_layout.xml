@@ -6,109 +6,71 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <FrameLayout
-        android:layout_width="match_parent"
 
-        android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal">
+        <android.support.v7.widget.AppCompatImageButton
+            android:layout_width="0dp"
+            android:id="@+id/prev"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            app:srcCompat="@drawable/ic_keyboard_arrow_left_black_24dp"
+            android:layout_weight="0.20" />
 
         <LinearLayout
-            android:id="@+id/header"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/b_header"
-            android:orientation="horizontal"
-            android:paddingBottom="8dp">
-
-            <ImageButton
-                android:id="@+id/prev"
-                style="?android:borderlessButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <com.mohammadreza.salari.shcalandar.Views.MyTextViewBold
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:text="5 دی 1395"
+                android:id="@+id/title"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textStyle="bold"
                 android:layout_gravity="center"
-                android:background="?attr/selectableItemBackground"
-                android:clickable="true"
-                android:contentDescription="@string/time_prev"
-                app:srcCompat="@drawable/ic_keyboard_arrow_left_black_24dp" />
-
+                android:layout_weight="0.50" />
             <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="64dp"
-                android:layout_weight="1"
-
-                android:orientation="vertical">
-
-                <com.mohammadreza.salari.shcalandar.Views.MyTextViewBold
-                    android:id="@+id/title"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                android:layout_weight="0.50">
+                <com.mohammadreza.salari.shcalandar.Views.MyTextView
+                    android:layout_width="0dp"
                     android:gravity="center"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/main_year_text_size" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-
-                    android:orientation="horizontal">
-
-                    <com.mohammadreza.salari.shcalandar.Views.MyTextView
-                        android:id="@+id/titleUp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="left"
-                        android:textSize="@dimen/main_month_text_size"
-                        tools:ignore="SmallSp" />
-
-                    <View
-                        android:layout_width="4dp"
-                        android:layout_height="match_parent" />
-
-                    <com.mohammadreza.salari.shcalandar.Views.MyTextView
-                        android:id="@+id/titleDown"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-
-                        android:layout_weight="1"
-                        android:gravity="right"
-
-
-                        android:textSize="@dimen/main_month_text_size"
-                        tools:ignore="SmallSp" />
-
-                </LinearLayout>
-
+                    android:id="@+id/titleUp"
+                    android:layout_gravity="center"
+                    android:text="الیام الحلا ملا بلا ه بلا"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.50" />
+                <com.mohammadreza.salari.shcalandar.Views.MyTextView
+                    android:layout_width="0dp"
+                    android:gravity="center"
+                    android:id="@+id/titleDown"
+                    android:text="saturday 19 feb ssa"
+                    android:layout_gravity="center"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.50" />
             </LinearLayout>
 
-            <ImageButton
-                android:id="@+id/next"
-                style="?android:borderlessButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="?attr/selectableItemBackground"
-                android:clickable="true"
-                android:contentDescription="@string/time_next"
-                app:srcCompat="@drawable/ic_keyboard_arrow_right_black_24dp" />
-
         </LinearLayout>
-
-        <TextView
-            android:id="@+id/selection_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/blue_dark"
-            android:gravity="center"
-            android:minHeight="48dp"
-            android:singleLine="true"
-            android:textColor="@android:color/white"
-            android:textSize="20sp"
-            android:visibility="gone" />
-
-    </FrameLayout>
+        <android.support.v7.widget.AppCompatImageButton
+            android:layout_width="0dp"
+            android:id="@+id/next"
+            android:layout_gravity="center"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            app:srcCompat="@drawable/ic_keyboard_arrow_right_black_24dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.20" />
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/days"
@@ -196,7 +158,6 @@
         android:id="@+id/weeks"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FFFFFF"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:orientation="vertical">
@@ -220,6 +181,7 @@
             android:layout_height="10dp" />
 
     </LinearLayout>
+
 
 </LinearLayout>
 
