@@ -1,7 +1,7 @@
 Shamsi & Persian Calendar
 ===================
 
-It's just a Persian Calendar Android application source code based on Google Material UI Design . 
+It's just A Persian Calendar Android application source code based on Google Material UI Design . 
 
 
  - Showing Persian , Islamic & Georgian Date.
